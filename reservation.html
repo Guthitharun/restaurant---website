@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Reservation — ADHIRATHA Family Restaurant</title>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="menu-page" id="reservation-page-container">
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">A</div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">ADHIRATHA</span>
+          <span class="nav-brand-tag">Family Restaurant</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="reservation.html" class="nav-link active">Table Booking</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        
+        <a href="cart.html" class="nav-cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </nav>
+
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay"></div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Reserve a Table</h1>
+      <p class="text-secondary">Avoid waiting lines! Pre-book your luxury AC cabins or family tables now.</p>
+    </div>
+  </section>
+
+  <!-- Reservation Section content -->
+  <section class="section" style="padding-top: var(--space-xl);">
+    <div class="container">
+      
+      <div class="reservation-wrapper">
+        
+        <!-- Left Column: Form booking -->
+        <div id="reservation-form-wrapper">
+          <form id="reservation-form" style="background:var(--bg-card); border:1px solid var(--border-color); padding:30px; border-radius:var(--radius-xl);">
+            <h3 class="mb-4" style="font-family:var(--font-heading); color:var(--gold);">Booking Request</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="res-name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="res-phone" class="form-label">Contact Number <span class="required">*</span></label>
+                <input type="tel" id="res-phone" class="form-input" placeholder="10-digit number" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-members" class="form-label">Number of Guests <span class="required">*</span></label>
+                <select id="res-members" class="form-select">
+                  <option value="2">2 Persons</option>
+                  <option value="4" selected>4 Persons</option>
+                  <option value="6">6 Persons</option>
+                  <option value="8">8 Persons</option>
+                  <option value="12">12+ (Large Gathering)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="res-date" class="form-label">Select Date <span class="required">*</span></label>
+                <input type="date" id="res-date" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="res-time" class="form-label">Preferred Time Slot <span class="required">*</span></label>
+              <select id="res-time" class="form-select">
+                <!-- Lunch slots -->
+                <option value="11:30 AM">11:30 AM (Early Lunch)</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="01:30 PM" selected>01:30 PM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <!-- Dinner slots -->
+                <option value="07:30 PM">07:30 PM (Dinner)</option>
+                <option value="08:30 PM">08:30 PM</option>
+                <option value="09:30 PM">09:30 PM</option>
+                <option value="10:30 PM">10:30 PM</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="res-requests" class="form-label">Special Requests (Optional)</label>
+              <textarea id="res-requests" class="form-textarea" placeholder="e.g. Need high chair for kids, AC Cabin preference, birthday celebration set up request..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-block btn-lg">
+              <i class="fa-solid fa-calendar-check"></i> Book Table Instantly
+            </button>
+          </form>
+        </div>
+
+        <!-- Right Column: Info & past reservations check -->
+        <div>
+          <!-- Restaurant hours & reservation policies -->
+          <div class="reservation-info mb-4">
+            <h3 style="font-family:var(--font-heading); color:var(--gold); margin-bottom:20px;">Dining Information</h3>
+            
+            <div class="reservation-info-item">
+              <div class="reservation-info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <h4 style="font-family:var(--font-accent);">Opening Hours</h4>
+                <p class="text-sm">Daily: 11:00 AM - 11:00 PM</p>
+              </div>
+            </div>
+
+            <div class="reservation-info-item">
+              <div class="reservation-info-icon"><i class="fa-solid fa-snowflake"></i></div>
+              <div>
+                <h4 style="font-family:var(--font-accent);">Fully Air Conditioned</h4>
+                <p class="text-sm">Separate family dining chambers & private tables available.</p>
+              </div>
+            </div>
+
+            <div class="reservation-info-item">
+              <div class="reservation-info-icon"><i class="fa-solid fa-utensils"></i></div>
+              <div>
+                <h4 style="font-family:var(--font-accent);">Large Gathering Events</h4>
+                <p class="text-sm">We accommodate catering functions up to 100+ guest packages.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Past bookings display -->
+          <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-xl); padding:25px;">
+            <h3 style="font-family:var(--font-heading); font-size:1.15rem; margin-bottom:15px;"><i class="fa-solid fa-clock-rotate-left text-gold"></i> Your Recent Bookings</h3>
+            <div id="past-bookings-list">
+              <!-- Dynamically populated by reservation.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/reservation.js"></script>
+</body>
+</html>

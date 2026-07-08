@@ -1,0 +1,324 @@
+/* ==========================================================================
+   MENU.CSS — Menu page specific styles
+   ADHIRATHA Family Restaurant
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Menu Page Layout
+   -------------------------------------------------------------------------- */
+.menu-page {
+  padding-top: var(--navbar-height);
+}
+
+/* --------------------------------------------------------------------------
+   Menu Sidebar + Content Layout (Desktop)
+   -------------------------------------------------------------------------- */
+.menu-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Category Sidebar */
+.menu-sidebar {
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-lg));
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  max-height: calc(100vh - var(--navbar-height) - var(--space-2xl));
+  overflow-y: auto;
+}
+
+.menu-sidebar-title {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: var(--space-sm) var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  background: var(--gold-subtle);
+  color: var(--gold);
+}
+
+.sidebar-link.active {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.sidebar-link i {
+  width: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.sidebar-link-count {
+  margin-left: auto;
+  font-size: 0.72rem;
+  background: var(--bg-tertiary);
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+}
+
+.sidebar-link.active .sidebar-link-count {
+  background: rgba(0,0,0,0.2);
+  color: rgba(0,0,0,0.7);
+}
+
+/* --------------------------------------------------------------------------
+   Menu Category Section
+   -------------------------------------------------------------------------- */
+.menu-category-section {
+  margin-bottom: var(--space-3xl);
+  scroll-margin-top: calc(var(--navbar-height) + var(--space-lg));
+}
+
+.menu-category-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.menu-category-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gold-subtle);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.menu-category-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+}
+
+.menu-category-count {
+  margin-left: auto;
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Menu Food Item (List View Alternative)
+   -------------------------------------------------------------------------- */
+.menu-list-item {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-md);
+  transition: all var(--transition-base);
+  align-items: center;
+}
+
+.menu-list-item:hover {
+  border-color: var(--border-gold);
+  background: var(--bg-card-hover);
+}
+
+.menu-list-img {
+  width: 110px;
+  height: 90px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.menu-list-details {
+  flex: 1;
+}
+
+.menu-list-name {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.menu-list-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.menu-list-bottom {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.menu-list-price {
+  font-family: var(--font-accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   Menu Item Count & Results Info
+   -------------------------------------------------------------------------- */
+.menu-results-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.menu-results-count {
+  font-family: var(--font-accent);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.menu-results-count strong {
+  color: var(--gold);
+}
+
+/* View toggle (grid/list) */
+.view-toggle {
+  display: flex;
+  gap: 4px;
+}
+
+.view-toggle-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.view-toggle-btn.active,
+.view-toggle-btn:hover {
+  background: var(--gold-gradient);
+  border-color: transparent;
+  color: var(--text-dark);
+}
+
+/* --------------------------------------------------------------------------
+   No Results State
+   -------------------------------------------------------------------------- */
+.no-results {
+  text-align: center;
+  padding: var(--space-4xl);
+  color: var(--text-muted);
+}
+
+.no-results i {
+  font-size: 3rem;
+  margin-bottom: var(--space-lg);
+  opacity: 0.3;
+}
+
+.no-results h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Menu
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .menu-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-sidebar {
+    position: static;
+    display: flex;
+    gap: var(--space-sm);
+    overflow-x: auto;
+    padding: var(--space-sm);
+    max-height: none;
+    scrollbar-width: none;
+  }
+
+  .menu-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-sidebar-title {
+    display: none;
+  }
+
+  .sidebar-link {
+    white-space: nowrap;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .sidebar-link-count {
+    display: none;
+  }
+
+  .menu-list-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-list-img {
+    width: 100%;
+    height: 160px;
+  }
+
+  .menu-list-bottom {
+    justify-content: center;
+  }
+
+  .menu-list-name {
+    justify-content: center;
+  }
+
+  .menu-results-info {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+}

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADHIRATHA FAMILY RESTAURANT (AC) — Pamuru, Andhra Pradesh</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Enjoy authentic South Indian, Biryani, Mandi, and Curry at ADHIRATHA Family Restaurant (AC), Pamuru. Order online or reserve a table today.">
+  <meta name="keywords" content="Adhiratha Restaurant, Pamuru restaurant, family restaurant Pamuru, order food Pamuru, Biryani Pamuru, Mandi Pamuru, AC Restaurant Pamuru">
+  <meta name="author" content="Tharun">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍽️%3C/text%3E%3C/svg%3E" type="image/x-icon">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Swiper Slider CDN for Carousels -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Premium Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Offer Announcement Bar -->
+  <div class="offer-bar">
+    <div class="offer-bar-content">
+      <div class="offer-bar-item">🎉 SPECIAL OFFERS AVAILABLE TODAY! ENTER COUPON ON CART PAGE!</div>
+      <div class="offer-bar-item">🚀 FREE HOME DELIVERY ON ALL ORDERS ABOVE ₹500!</div>
+      <div class="offer-bar-item">📱 ORDER INSTANTLY VIA WHATSAPP (916301042993)</div>
+      <div class="offer-bar-item">🍖 100% PREMIUM TANDOORI & MANDI ROYAL EXPERIENCES!</div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand" id="brand-logo">
+        <div class="nav-brand-icon">A</div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">ADHIRATHA</span>
+          <span class="nav-brand-tag">Family Restaurant</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navlinks -->
+      <nav class="nav-links" id="main-navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="reservation.html" class="nav-link">Table Booking</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        
+        <!-- Cart & Profile -->
+        <a href="cart.html" class="nav-cart" id="nav-cart-btn">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="nav-cart-badge">0</span>
+        </a>
+
+        <!-- Admin link helper -->
+        <a href="admin/index.html" class="nav-link" style="border: 1px dashed var(--border-gold); padding: 5px 12px; margin-left: 10px; border-radius: 5px; color: var(--gold);"><i class="fa-solid fa-lock"></i> Admin</a>
+      </nav>
+
+      <!-- Toggle Menu for Mobile -->
+      <div class="nav-toggle" id="menu-toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="mobile-nav-overlay"></div>
+
+  <!-- 1. Hero Banner Section -->
+  <section class="hero" id="home-hero">
+    <div class="hero-particles"></div>
+    <div class="hero-bg">
+      <!-- High quality food banner background fallback -->
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1200" alt="Restaurant Interior">
+    </div>
+    <div class="hero-content">
+      <span class="hero-label">Luxury Dining Pamuru</span>
+      <h1 class="hero-title">Experience the Royal Feast at <span class="gold">ADHIRATHA</span></h1>
+      <p class="hero-subtitle">Indulge in authentic traditional Indian curries, aromatic Hyderabadi Dum Biryanis, smokey mandis, and sizzling tandooris. Prepared by master chefs in pure hygienic standards.</p>
+      
+      <div class="hero-btns">
+        <a href="menu.html" class="btn btn-gold btn-lg"><i class="fa-solid fa-bowl-rice"></i> Order Now</a>
+        <a href="reservation.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-calendar-check"></i> Book Table</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">100+</div>
+          <div class="hero-stat-label">Dishes</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">4.8 ★</div>
+          <div class="hero-stat-label">Rating</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">AC</div>
+          <div class="hero-stat-label">Family Dining</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll Down</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- 2. Today's Special Section -->
+  <section class="section" id="todays-specials-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px;">Chef Recommends</span>
+        <h2>Today's Specials</h2>
+        <p class="text-secondary">Handpicked culinary masterpieces prepared fresh today.</p>
+      </div>
+
+      <!-- Specials Slider (Swiper JS Wrapper) -->
+      <div class="swiper specials-slider mb-4">
+        <div class="swiper-wrapper" id="specials-slider-wrapper">
+          <!-- Dynamically populated in JavaScript from data.js -->
+          
+          <!-- Sample Slide 1 (Hyderabadi Chicken Biryani) -->
+          <div class="swiper-slide">
+            <div class="food-card">
+              <div class="food-card-img">
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=400" alt="Chicken Dum Biryani">
+                <span class="card-badge badge-bestseller">Bestseller</span>
+              </div>
+              <div class="food-card-body">
+                <div class="food-card-header">
+                  <h3 class="food-card-name">Chicken Dum Biryani</h3>
+                  <span class="veg-dot nonveg"></span>
+                </div>
+                <p class="food-card-desc">Slow-cooked Hyderabadi dum biryani with long basmati rice, tender chicken, and saffron.</p>
+                <div class="food-card-bottom">
+                  <span class="food-card-price">₹250</span>
+                  <a href="menu.html?category=biryani" class="add-to-cart-btn"><i class="fa-solid fa-arrow-right"></i> Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Slide 2 (Mutton Mandi) -->
+          <div class="swiper-slide">
+            <div class="food-card">
+              <div class="food-card-img">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=400" alt="Mutton Mandi">
+                <span class="card-badge badge-popular">Popular</span>
+              </div>
+              <div class="food-card-body">
+                <div class="food-card-header">
+                  <h3 class="food-card-name">Mutton Mandi</h3>
+                  <span class="veg-dot nonveg"></span>
+                </div>
+                <p class="food-card-desc">Smoked authentic Arabian Mandi served with dry nuts, soup, and tomato chutney.</p>
+                <div class="food-card-bottom">
+                  <span class="food-card-price">₹400</span>
+                  <a href="menu.html?category=mandi" class="add-to-cart-btn"><i class="fa-solid fa-arrow-right"></i> Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Slide 3 (Paneer Butter Masala) -->
+          <div class="swiper-slide">
+            <div class="food-card">
+              <div class="food-card-img">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=400" alt="Paneer Butter Masala">
+                <span class="card-badge badge-bestseller">Veg Special</span>
+              </div>
+              <div class="food-card-body">
+                <div class="food-card-header">
+                  <h3 class="food-card-name">Paneer Butter Masala</h3>
+                  <span class="veg-dot veg"></span>
+                </div>
+                <p class="food-card-desc">Cubes of fresh cottage cheese tossed in a rich, mild sweet creamy tomato gravy.</p>
+                <div class="food-card-bottom">
+                  <span class="food-card-price">₹230</span>
+                  <a href="menu.html?category=veg-curry" class="add-to-cart-btn"><i class="fa-solid fa-arrow-right"></i> Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slider Pagination / Nav -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="menu.html" class="btn btn-gold"><i class="fa-solid fa-burger"></i> View Complete Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Promotion/Offer Banner Section -->
+  <section class="section" style="background:var(--bg-secondary); position:relative;" id="offers-promo-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px;">Hot Deals</span>
+        <h2>Active Coupons & Offers</h2>
+        <p class="text-secondary">Limited period offers to save big on your royal dining bills.</p>
+      </div>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-xl);" id="offers-grid-container">
+        <!-- Coupon 1 -->
+        <div class="offer-card animate-scale" style="background: linear-gradient(135deg, #d4a843, #f5c518)">
+          <div class="offer-card-badge">New User</div>
+          <h3>20% OFF on First Order!</h3>
+          <p>Get instant 20% discount on orders above ₹300 using code WELCOME20.</p>
+          <div class="offer-card-code" onclick="copyToClipboard('WELCOME20')">WELCOME20</div>
+          <div class="offer-card-pattern"></div>
+        </div>
+
+        <!-- Coupon 2 -->
+        <div class="offer-card animate-scale" style="background: linear-gradient(135deg, #e74c3c, #c0392b)">
+          <div class="offer-card-badge">Combo</div>
+          <h3>Family Biryani Combo</h3>
+          <p>Order Family Biryani and get flat 15% discount on total cart above ₹500.</p>
+          <div class="offer-card-code" onclick="copyToClipboard('FAMILY50')">FAMILY50</div>
+          <div class="offer-card-pattern"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How It Works Section -->
+  <section class="section" id="how-it-works-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px;">Process Flow</span>
+        <h2>Seamless Delivery Flow</h2>
+        <p class="text-secondary">How we get your hot and fresh food delivered directly to your doorstep.</p>
+      </div>
+
+      <div class="how-it-works-grid">
+        <!-- Step 1 -->
+        <div class="hiw-step" data-aos="fade-up" data-aos-delay="0">
+          <div class="hiw-icon">
+            <i class="fa-solid fa-burger"></i>
+            <span class="hiw-number">1</span>
+          </div>
+          <h3 class="hiw-title">Choose Food</h3>
+          <p class="hiw-text">Select your favorite mouth-watering food items from our online menu catalog.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="hiw-step" data-aos="fade-up" data-aos-delay="150">
+          <div class="hiw-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="hiw-number">2</span>
+          </div>
+          <h3 class="hiw-title">Quick Checkout</h3>
+          <p class="hiw-text">Add to cart, review and complete your order details. Select payment methods.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="hiw-step" data-aos="fade-up" data-aos-delay="300">
+          <div class="hiw-icon">
+            <i class="fa-solid fa-fire"></i>
+            <span class="hiw-number">3</span>
+          </div>
+          <h3 class="hiw-title">Chef Cooks</h3>
+          <p class="hiw-text">Our expert master chef starts preparing your dishes using hygienic materials.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="hiw-step" data-aos="fade-up" data-aos-delay="450">
+          <div class="hiw-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span class="hiw-number">4</span>
+          </div>
+          <h3 class="hiw-title">Fast Delivery</h3>
+          <p class="hiw-text">Our delivery rider packs it in thermal bags and delivers it hot at your location.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand / About -->
+        <div class="footer-about">
+          <a href="index.html" class="footer-brand">
+            <div class="nav-brand-icon">A</div>
+            <span class="nav-brand-name">ADHIRATHA</span>
+          </a>
+          <p>ADHIRATHA Family Restaurant (AC) is the finest culinary destination in Pamuru, Andhra Pradesh. Serving genuine hospitality and premium Indian cuisine since years.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Menu Card</a></li>
+            <li><a href="reservation.html"><i class="fa-solid fa-chevron-right"></i> Book a Table</a></li>
+          </ul>
+        </div>
+
+        <!-- Working Hours -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Opening Hours</h4>
+          <ul class="footer-links" style="color:var(--text-secondary); font-size:0.9rem;">
+            <li style="margin-bottom:10px;"><strong>Monday - Friday:</strong><br>11:00 AM – 11:00 PM</li>
+            <li><strong>Saturday - Sunday:</strong><br>11:00 AM – 11:30 PM</li>
+          </ul>
+        </div>
+
+        <!-- Address & Contact -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Near Highway (NH-565),<br>Near Govt. Hospital, Pamuru,<br>Andhra Pradesh - 523108</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>63010 42993<br>96662 50268</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Area -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 ADHIRATHA Family Restaurant. All Rights Reserved. Made with <i class="fa-solid fa-heart heart"></i> in Andhra Pradesh.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons (WhatsApp, Call and Back to Top) -->
+  <div class="floating-btns">
+    <!-- Click to Call Button 1 -->
+    <a href="tel:6301042993" class="float-btn float-btn-call" title="Call Us 6301042993">
+      <i class="fa-solid fa-phone"></i>
+      <span class="float-btn-tooltip">Call: 6301042993</span>
+    </a>
+    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/916301042993?text=Hello!%20I'd%20like%20to%20order%20some%20food%20from%20Adhiratha%20Restaurant." target="_blank" class="float-btn float-btn-whatsapp" title="WhatsApp Order">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="float-btn-tooltip">Order on WhatsApp</span>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="float-btn float-btn-top" id="scroll-to-top-btn" title="Back to Top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- JavaScript Utilities -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  
+  <!-- Swiper Slider JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Slider Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.specials-slider', {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        centeredSlides: false,
+        loop: true,
+        grabCursor: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

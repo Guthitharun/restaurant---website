@@ -1,0 +1,456 @@
+/* ==========================================================================
+   ADMIN.CSS — Admin Panel Styles
+   ADHIRATHA Family Restaurant
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Admin Layout
+   -------------------------------------------------------------------------- */
+.admin-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   Admin Sidebar
+   -------------------------------------------------------------------------- */
+.admin-sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  padding: var(--space-xl) 0;
+  position: fixed;
+  width: 260px;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: var(--z-sticky);
+}
+
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-2xl);
+  text-decoration: none;
+}
+
+.admin-sidebar-brand .nav-brand-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+}
+
+.admin-sidebar-brand .nav-brand-name {
+  font-size: 1rem;
+}
+
+.admin-sidebar-brand .nav-brand-tag {
+  font-size: 0.6rem;
+}
+
+.admin-nav-section {
+  margin-bottom: var(--space-xl);
+}
+
+.admin-nav-label {
+  padding: 0 var(--space-lg);
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 12px var(--space-lg);
+  font-family: var(--font-accent);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+}
+
+.admin-nav-link:hover {
+  background: var(--gold-subtle);
+  color: var(--gold);
+  border-left-color: var(--gold);
+}
+
+.admin-nav-link.active {
+  background: var(--gold-subtle);
+  color: var(--gold);
+  border-left-color: var(--gold);
+  font-weight: 600;
+}
+
+.admin-nav-link i {
+  width: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.admin-nav-badge {
+  margin-left: auto;
+  padding: 2px 8px;
+  background: var(--danger);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   Admin Main Content
+   -------------------------------------------------------------------------- */
+.admin-main {
+  margin-left: 260px;
+  padding: var(--space-xl);
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-header-title h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.admin-header-title p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--gold-gradient);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Admin Dashboard Cards
+   -------------------------------------------------------------------------- */
+.admin-stat-card .admin-stat-icon.orders {
+  background: rgba(52, 152, 219, 0.15);
+  color: var(--info);
+}
+
+.admin-stat-card .admin-stat-icon.revenue {
+  background: rgba(46, 204, 113, 0.15);
+  color: var(--success);
+}
+
+.admin-stat-card .admin-stat-icon.pending {
+  background: rgba(243, 156, 18, 0.15);
+  color: var(--warning);
+}
+
+.admin-stat-card .admin-stat-icon.customers {
+  background: rgba(155, 89, 182, 0.15);
+  color: #9b59b6;
+}
+
+/* --------------------------------------------------------------------------
+   Admin Tables
+   -------------------------------------------------------------------------- */
+.admin-table-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+.admin-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table-title {
+  font-family: var(--font-accent);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.admin-table-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Order status actions */
+.admin-action-btn {
+  padding: 6px 14px;
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.admin-action-btn.accept {
+  background: rgba(46, 204, 113, 0.15);
+  color: var(--success);
+}
+
+.admin-action-btn.accept:hover {
+  background: var(--success);
+  color: white;
+}
+
+.admin-action-btn.cancel {
+  background: rgba(231, 76, 60, 0.15);
+  color: var(--danger);
+}
+
+.admin-action-btn.cancel:hover {
+  background: var(--danger);
+  color: white;
+}
+
+.admin-action-btn.view {
+  background: rgba(52, 152, 219, 0.15);
+  color: var(--info);
+}
+
+.admin-action-btn.view:hover {
+  background: var(--info);
+  color: white;
+}
+
+/* --------------------------------------------------------------------------
+   Admin Chart Area
+   -------------------------------------------------------------------------- */
+.admin-chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.admin-chart-card canvas {
+  max-height: 300px;
+}
+
+.admin-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Admin Quick Stats Row
+   -------------------------------------------------------------------------- */
+.admin-quick-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Admin Login Page
+   -------------------------------------------------------------------------- */
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  padding: var(--space-xl);
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.admin-login-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto var(--space-lg);
+  background: var(--gold-gradient);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+}
+
+.admin-login-card h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.admin-login-card p {
+  margin-bottom: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Order Detail Modal
+   -------------------------------------------------------------------------- */
+.order-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.order-detail-items {
+  margin-bottom: var(--space-lg);
+}
+
+.order-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.order-detail-item:last-child {
+  border-bottom: none;
+}
+
+.order-detail-customer {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.order-detail-customer h4 {
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+.order-detail-customer p {
+  font-size: 0.88rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Admin Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: var(--space-md) 0;
+    display: flex;
+    gap: var(--space-xs);
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .admin-sidebar-brand {
+    display: none;
+  }
+
+  .admin-nav-section {
+    display: flex;
+    gap: var(--space-xs);
+    margin-bottom: 0;
+  }
+
+  .admin-nav-label {
+    display: none;
+  }
+
+  .admin-nav-link {
+    white-space: nowrap;
+    padding: 8px 16px;
+    border-left: none;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+  }
+
+  .admin-nav-link.active,
+  .admin-nav-link:hover {
+    border-left: none;
+    border-radius: var(--radius-pill);
+  }
+
+  .admin-main {
+    margin-left: 0;
+  }
+
+  .admin-quick-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .admin-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-main {
+    padding: var(--space-md);
+  }
+}

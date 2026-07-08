@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — ADHIRATHA Family Restaurant</title>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js CDN for Graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body id="admin-dashboard-container">
+
+  <div class="admin-layout">
+    
+    <!-- Left Navigation Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="../index.html" class="admin-sidebar-brand">
+        <div class="nav-brand-icon">A</div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">ADHIRATHA</span>
+          <span class="nav-brand-tag">Admin Panel</span>
+        </div>
+      </a>
+
+      <!-- Group 1: Controls -->
+      <div class="admin-nav-section">
+        <div class="admin-nav-label">Management</div>
+        
+        <a href="dashboard.html" class="admin-nav-link active">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="orders.html" class="admin-nav-link">
+          <i class="fa-solid fa-utensils"></i>
+          <span>Order List</span>
+          <span class="admin-nav-badge" id="admin-sidebar-pending-badge">0</span>
+        </a>
+      </div>
+
+      <!-- Group 2: Public links -->
+      <div class="admin-nav-section">
+        <div class="admin-nav-label">Quick Links</div>
+        <a href="../index.html" class="admin-nav-link">
+          <i class="fa-solid fa-globe"></i>
+          <span>View Live Site</span>
+        </a>
+        <a href="../menu.html" class="admin-nav-link">
+          <i class="fa-solid fa-burger"></i>
+          <span>View Menu Card</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Top header bar -->
+      <header class="admin-header">
+        <div class="admin-header-title">
+          <h1>Restaurant Console</h1>
+          <p>Welcome back! Here's what's happening at Adhiratha Pamuru today.</p>
+        </div>
+
+        <div class="admin-header-actions">
+          <div class="admin-avatar">AD</div>
+          <button id="admin-logout-btn" class="btn btn-dark btn-sm"><i class="fa-solid fa-power-off"></i> Logout</button>
+        </div>
+      </header>
+
+      <!-- 1. Stats Counter Cards -->
+      <div class="admin-stats-grid mb-4">
+        
+        <!-- Stat Card 1 -->
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <div class="admin-stat-icon orders"><i class="fa-solid fa-bag-shopping"></i></div>
+            <span class="admin-stat-change up"><i class="fa-solid fa-arrow-up"></i> +12%</span>
+          </div>
+          <div class="admin-stat-number" id="stat-total-orders">0</div>
+          <div class="admin-stat-label">Total Cumulative Orders</div>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <div class="admin-stat-icon revenue"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <span class="admin-stat-change up"><i class="fa-solid fa-arrow-up"></i> +8%</span>
+          </div>
+          <div class="admin-stat-number" id="stat-revenue">₹0</div>
+          <div class="admin-stat-label">Today's Revenue Income</div>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <div class="admin-stat-icon pending"><i class="fa-solid fa-clock"></i></div>
+            <span class="admin-stat-change" style="color:var(--text-muted);">Active Wait</span>
+          </div>
+          <div class="admin-stat-number" id="stat-pending-orders">0</div>
+          <div class="admin-stat-label">Pending Cook Approvals</div>
+        </div>
+
+        <!-- Stat Card 4 -->
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <div class="admin-stat-icon customers"><i class="fa-solid fa-users"></i></div>
+            <span class="admin-stat-change up"><i class="fa-solid fa-arrow-up"></i> +15%</span>
+          </div>
+          <div class="admin-stat-number" id="stat-today-orders">0</div>
+          <div class="admin-stat-label">Orders Placed Today</div>
+        </div>
+
+      </div>
+
+      <!-- 2. Dual grid: Chart and Tables -->
+      <div class="admin-quick-row">
+        
+        <!-- Left: Sales analytics graph -->
+        <div class="admin-chart-card">
+          <div class="admin-chart-header">
+            <h3 style="font-family:var(--font-accent);">Sales Analytics Revenue</h3>
+            <span class="text-xs text-muted">Weekly Stats (Mon - Sun)</span>
+          </div>
+          <canvas id="salesChart"></canvas>
+        </div>
+
+        <!-- Right: System control panel info -->
+        <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:20px; display:flex; flex-direction:column; justify-content:center;">
+          <h3 class="mb-3" style="font-family:var(--font-heading); color:var(--gold);">Delivery Dispatch Status</h3>
+          <p class="text-sm text-secondary mb-3">Orders approved will progress from Cook Preparation to Rider Dispatch automatically. Mark order as 'Delivered' when rider confirms COD receipt.</p>
+          
+          <div style="background:var(--bg-secondary); padding:15px; border-radius:8px; font-size:0.82rem;">
+            <p style="margin-bottom:8px;"><strong class="text-gold">Admin Sandbox Controls:</strong></p>
+            <p style="margin-bottom:4px;">1. Place test orders from public menu interface.</p>
+            <p style="margin-bottom:4px;">2. Access dashboard to Accept/Deliever/Cancel orders.</p>
+            <p>3. Reset dashboard at any time by clearing browser local storage.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3. Active Orders Table list -->
+      <div class="admin-table-wrapper">
+        <div class="admin-table-header">
+          <h3 class="admin-table-title">Recent Order Activity</h3>
+          
+          <div class="pill-tabs">
+            <button class="pill-tab active" data-filter="all">All</button>
+            <button class="pill-tab" data-filter="pending">Pending</button>
+            <button class="pill-tab" data-filter="cooking">Cooking</button>
+            <button class="pill-tab" data-filter="delivered">Delivered</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer details</th>
+                <th>Items details</th>
+                <th>Amount</th>
+                <th>Method</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-orders-tbody">
+              <!-- Dynamically populated in JavaScript by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+  
+  <script>
+    // Sync sidebar badge counter with active count on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const pendingCount = OrderStore.getOrdersByStatus('pending').length;
+      const badge = document.getElementById('admin-sidebar-pending-badge');
+      if (badge) {
+        badge.textContent = pendingCount;
+        badge.style.display = pendingCount > 0 ? 'inline-block' : 'none';
+      }
+    });
+  </script>
+</body>
+</html>
