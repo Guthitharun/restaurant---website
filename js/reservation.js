@@ -62,6 +62,7 @@ function setupReservationForm() {
     e.preventDefault();
 
     const name = document.getElementById('res-name').value.trim();
+    const email = document.getElementById('res-email').value.trim();
     const phone = document.getElementById('res-phone').value.trim();
     const members = document.getElementById('res-members').value;
     const date = document.getElementById('res-date').value;
@@ -81,6 +82,7 @@ function setupReservationForm() {
     // Save reservation to local storage store
     const booking = {
       name,
+      email,
       phone,
       members: parseInt(members),
       date,
@@ -95,6 +97,7 @@ function setupReservationForm() {
                             `*TABLE RESERVATION REQUEST*\n\n` +
                             `*Booking ID:* ${savedBooking.id}\n` +
                             `*Name:* ${name}\n` +
+                            (email ? `*Email:* ${email}\n` : '') +
                             `*Phone:* ${phone}\n` +
                             `*Guests Count:* ${members} Members\n` +
                             `*Booking Date:* ${formatDate(date)}\n` +

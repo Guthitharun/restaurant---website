@@ -1,0 +1,1434 @@
+/* ==========================================================================
+   CARDS.CSS — ADHIRATHA Premium Card Design System
+   Includes: Glassmorphism, Neumorphism, Gradient, 3D Hover, Flip,
+             Food Cards, Profile Cards, Dashboard Cards, Glow Cards
+   Author: Tharun
+   ========================================================================== */
+
+/* ============================================================
+   SECTION 1 — CSS VARIABLES (Card-specific)
+   ============================================================ */
+:root {
+  /* Glassmorphism */
+  --glass-bg:           rgba(255, 255, 255, 0.07);
+  --glass-border:       rgba(255, 255, 255, 0.15);
+  --glass-shadow:       0 8px 32px rgba(0, 0, 0, 0.4);
+  --glass-blur:         16px;
+
+  /* Neumorphism */
+  --neuro-bg:           #161616;
+  --neuro-shadow-light: #1f1f1f;
+  --neuro-shadow-dark:  #0d0d0d;
+  --neuro-radius:       18px;
+
+  /* Glow */
+  --glow-gold:          0 0 15px rgba(212,168,67,0.6), 0 0 40px rgba(212,168,67,0.25), 0 0 80px rgba(212,168,67,0.1);
+  --glow-red:           0 0 15px rgba(231,76,60,0.6),  0 0 40px rgba(231,76,60,0.25);
+  --glow-green:         0 0 15px rgba(46,204,113,0.6), 0 0 40px rgba(46,204,113,0.25);
+  --glow-blue:          0 0 15px rgba(52,152,219,0.6), 0 0 40px rgba(52,152,219,0.25);
+
+  /* 3D */
+  --perspective: 1200px;
+
+  /* Gradient palettes */
+  --grad-sunset:  linear-gradient(135deg, #d4a843 0%, #e74c3c 100%);
+  --grad-ocean:   linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  --grad-forest:  linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+  --grad-royal:   linear-gradient(135deg, #2c1654 0%, #4a1942 50%, #d4a843 100%);
+  --grad-fire:    linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+  --grad-midnight:linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+}
+
+/* ============================================================
+   SECTION 2 — GLASSMORPHISM CARDS
+   ============================================================ */
+.card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-glass::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.card-glass::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -30%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.card-glass:hover {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(212,168,67,0.4);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(212,168,67,0.15);
+}
+
+/* Glass Offer variant */
+.card-glass.offer-card {
+  padding: 2rem 2rem 1.5rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-glass.offer-gold {
+  border-color: rgba(212,168,67,0.35);
+  background: linear-gradient(135deg, rgba(212,168,67,0.1), rgba(245,197,24,0.05));
+}
+
+.card-glass.offer-red {
+  border-color: rgba(231,76,60,0.35);
+  background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(192,57,43,0.05));
+}
+
+.card-glass.offer-green {
+  border-color: rgba(46,204,113,0.35);
+  background: linear-gradient(135deg, rgba(46,204,113,0.1), rgba(39,174,96,0.05));
+}
+
+/* ============================================================
+   SECTION 3 — NEUMORPHISM CARDS
+   ============================================================ */
+.card-neuro {
+  background: var(--neuro-bg);
+  border-radius: var(--neuro-radius);
+  box-shadow:
+    6px 6px 16px var(--neuro-shadow-dark),
+    -6px -6px 16px var(--neuro-shadow-light);
+  padding: 2rem 1.5rem;
+  border: none;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.card-neuro:hover {
+  box-shadow:
+    2px 2px 6px var(--neuro-shadow-dark),
+    -2px -2px 6px var(--neuro-shadow-light),
+    inset 4px 4px 12px var(--neuro-shadow-dark),
+    inset -4px -4px 12px var(--neuro-shadow-light);
+}
+
+.card-neuro .neuro-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 1.2rem;
+  background: var(--neuro-bg);
+  box-shadow:
+    4px 4px 10px var(--neuro-shadow-dark),
+    -4px -4px 10px var(--neuro-shadow-light);
+  color: var(--gold);
+  transition: all 0.3s ease;
+}
+
+.card-neuro:hover .neuro-icon {
+  box-shadow:
+    inset 3px 3px 8px var(--neuro-shadow-dark),
+    inset -3px -3px 8px var(--neuro-shadow-light);
+  color: var(--gold-light);
+}
+
+.card-neuro .neuro-number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: rgba(212,168,67,0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ============================================================
+   SECTION 4 — GRADIENT CARDS
+   ============================================================ */
+.card-gradient {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+
+.card-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+}
+
+.card-gradient:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+
+.card-gradient.grad-sunset  { background: var(--grad-sunset); }
+.card-gradient.grad-ocean   { background: var(--grad-ocean); }
+.card-gradient.grad-forest  { background: var(--grad-forest); }
+.card-gradient.grad-royal   { background: var(--grad-royal); }
+.card-gradient.grad-fire    { background: var(--grad-fire); }
+.card-gradient.grad-midnight{ background: var(--grad-midnight); }
+
+.card-gradient .gradient-content {
+  position: relative;
+  z-index: 2;
+}
+
+.card-gradient .gradient-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card-gradient .gradient-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.card-gradient .gradient-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ============================================================
+   SECTION 5 — 3D HOVER CARDS
+   ============================================================ */
+.card-3d-wrapper {
+  perspective: var(--perspective);
+  display: block;
+}
+
+.card-3d {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  will-change: transform;
+  position: relative;
+}
+
+.card-3d:hover {
+  border-color: var(--border-gold);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), var(--glow-gold);
+}
+
+.card-3d .card-3d-shine {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.15), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  border-radius: inherit;
+}
+
+.card-3d:hover .card-3d-shine {
+  opacity: 1;
+}
+
+/* Food Card Image Wrapper within 3D */
+.card-3d .food-card-img {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-3d .food-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-3d:hover .food-card-img img {
+  transform: scale(1.08);
+}
+
+/* ============================================================
+   SECTION 6 — FLIP CARDS
+   ============================================================ */
+.card-flip {
+  perspective: 1000px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-flip:hover .card-flip-inner,
+.card-flip.flipped .card-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.card-flip-front,
+.card-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card-flip-front {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+}
+
+.card-flip-back {
+  background: var(--gold-gradient);
+  transform: rotateY(180deg);
+  border: 1px solid var(--border-gold);
+}
+
+.card-flip-back * {
+  color: var(--text-dark);
+}
+
+.card-flip-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.card-flip-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.card-flip-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SECTION 7 — RESTAURANT FOOD CARDS (Enhanced)
+   ============================================================ */
+.card-food {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-food::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212,168,67,0.04), transparent);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-food:hover::before { opacity: 1; }
+
+.card-food:hover {
+  border-color: rgba(212,168,67,0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,168,67,0.15);
+}
+
+.card-food .food-img-wrap {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.card-food .food-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-food:hover .food-img-wrap img {
+  transform: scale(1.12);
+}
+
+.card-food .food-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.1) 60%, transparent 100%);
+}
+
+.card-food .food-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+
+.card-food .food-badge {
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.food-badge.bestseller { background: var(--gold-gradient); color: #000; }
+.food-badge.popular    { background: rgba(231,76,60,0.9);  color: #fff; }
+.food-badge.veg-badge  { background: rgba(46,204,113,0.9); color: #fff; }
+.food-badge.new-badge  { background: rgba(52,152,219,0.9); color: #fff; }
+
+.card-food .food-wishlist {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  background: rgba(10,10,10,0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 3;
+  border: 1px solid var(--border-color);
+}
+
+.card-food .food-wishlist:hover,
+.card-food .food-wishlist.active {
+  color: var(--danger);
+  border-color: var(--danger);
+  background: rgba(231,76,60,0.15);
+}
+
+.card-food .food-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.card-food .food-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.card-food .food-name {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  flex: 1;
+}
+
+.card-food .food-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.card-food .food-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.card-food .food-price {
+  font-family: var(--font-accent);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: -0.5px;
+}
+
+.card-food .food-price span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+
+.card-food .food-order-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: var(--gold-gradient);
+  color: #000;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.card-food .food-order-btn:hover {
+  transform: scale(1.06);
+  box-shadow: var(--glow-gold);
+  color: #000;
+}
+
+.card-food .food-order-btn.added {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+}
+
+/* Veg dot indicator */
+.card-food .veg-tag {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-food .veg-tag::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.card-food .veg-tag.veg { border-color: #2ecc71; }
+.card-food .veg-tag.veg::after { background: #2ecc71; }
+.card-food .veg-tag.nonveg { border-color: #e74c3c; }
+.card-food .veg-tag.nonveg::after { background: #e74c3c; }
+
+/* Rating stars */
+.card-food .food-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+  color: var(--gold);
+}
+
+/* ============================================================
+   SECTION 8 — PROFILE CARDS (Reviews / Chef)
+   ============================================================ */
+.card-profile {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-profile::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(212,168,67,0.15), rgba(245,197,24,0.05));
+}
+
+.card-profile:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4), var(--glow-gold);
+}
+
+.card-profile .profile-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: var(--gold-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(212,168,67,0.2);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.card-profile .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-profile .profile-name {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.card-profile .profile-role {
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.card-profile .profile-stars {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+
+.card-profile .star {
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.card-profile .star.empty {
+  color: var(--text-muted);
+}
+
+.card-profile .profile-quote {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.card-profile .profile-quote::before {
+  content: '"';
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: rgba(212,168,67,0.2);
+  line-height: 0;
+  position: absolute;
+  top: 0.6rem;
+  left: -0.25rem;
+}
+
+.card-profile .profile-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  font-family: var(--font-accent);
+}
+
+/* ============================================================
+   SECTION 9 — DASHBOARD CARDS
+   ============================================================ */
+.card-dashboard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-dashboard::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(212,168,67,0.06);
+  pointer-events: none;
+}
+
+.card-dashboard:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+
+.card-dashboard .dash-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.card-dashboard .dash-icon.icon-gold    { background: rgba(212,168,67,0.15); color: var(--gold); }
+.card-dashboard .dash-icon.icon-red     { background: rgba(231,76,60,0.15);  color: #e74c3c; }
+.card-dashboard .dash-icon.icon-green   { background: rgba(46,204,113,0.15); color: #2ecc71; }
+.card-dashboard .dash-icon.icon-blue    { background: rgba(52,152,219,0.15); color: #3498db; }
+.card-dashboard .dash-icon.icon-purple  { background: rgba(155,89,182,0.15); color: #9b59b6; }
+
+.card-dashboard .dash-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.card-dashboard .dash-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--font-accent);
+  margin-bottom: 0.25rem;
+}
+
+.card-dashboard .dash-value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.card-dashboard .dash-change {
+  font-size: 0.78rem;
+  font-family: var(--font-accent);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-dashboard .dash-change.up   { color: var(--success); }
+.card-dashboard .dash-change.down { color: var(--danger); }
+
+.card-dashboard .dash-trend {
+  font-size: 1.8rem;
+  color: rgba(212,168,67,0.08);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  line-height: 1;
+  z-index: 0;
+}
+
+/* ============================================================
+   SECTION 10 — ANIMATED GLOW CARDS
+   ============================================================ */
+@keyframes glowPulseGold {
+  0%, 100% { box-shadow: 0 0 10px rgba(212,168,67,0.4), 0 0 30px rgba(212,168,67,0.15), 0 0 60px rgba(212,168,67,0.05); }
+  50%       { box-shadow: 0 0 20px rgba(212,168,67,0.8), 0 0 50px rgba(212,168,67,0.3),  0 0 90px rgba(212,168,67,0.12); }
+}
+
+@keyframes glowPulseRed {
+  0%, 100% { box-shadow: 0 0 10px rgba(231,76,60,0.4), 0 0 30px rgba(231,76,60,0.15); }
+  50%       { box-shadow: 0 0 20px rgba(231,76,60,0.8), 0 0 50px rgba(231,76,60,0.3); }
+}
+
+@keyframes glowPulseGreen {
+  0%, 100% { box-shadow: 0 0 10px rgba(46,204,113,0.4), 0 0 30px rgba(46,204,113,0.15); }
+  50%       { box-shadow: 0 0 20px rgba(46,204,113,0.8), 0 0 50px rgba(46,204,113,0.3); }
+}
+
+@keyframes borderRotate {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmerMove {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+.card-glow {
+  background: var(--bg-card);
+  border-radius: 20px;
+  position: relative;
+  padding: 2rem 1.5rem;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(60deg,
+    var(--gold), #f5c518, #fff7cc, var(--gold), #d4a843, #f5c518);
+  background-size: 300% 300%;
+  animation: borderRotate 3s linear infinite;
+  z-index: -1;
+}
+
+.card-glow::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-secondary);
+  border-radius: 19px;
+  z-index: -1;
+}
+
+.card-glow:hover {
+  transform: translateY(-6px);
+  animation: glowPulseGold 2s ease-in-out infinite;
+}
+
+/* Shimmer effect child */
+.card-glow .glow-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.06),
+    transparent
+  );
+  transform: skewX(-15deg);
+  animation: shimmerMove 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Glow variants */
+.card-glow.glow-gold::before   { background: linear-gradient(60deg, var(--gold), #f5c518, #fff7cc, var(--gold)); background-size: 300% 300%; animation: borderRotate 3s linear infinite; }
+.card-glow.glow-red::before    { background: linear-gradient(60deg, #e74c3c, #c0392b, #ff6b6b, #e74c3c); background-size: 300% 300%; animation: borderRotate 3s linear infinite; }
+.card-glow.glow-green::before  { background: linear-gradient(60deg, #2ecc71, #27ae60, #a8e6cf, #2ecc71); background-size: 300% 300%; animation: borderRotate 3s linear infinite; }
+.card-glow.glow-blue::before   { background: linear-gradient(60deg, #3498db, #2980b9, #85c1e9, #3498db);  background-size: 300% 300%; animation: borderRotate 3s linear infinite; }
+
+.card-glow.glow-red:hover   { animation: glowPulseRed 2s ease-in-out infinite; }
+.card-glow.glow-green:hover { animation: glowPulseGreen 2s ease-in-out infinite; }
+
+/* ============================================================
+   SECTION 11 — PRODUCT CARDS (Ecommerce-style for Full Menu)
+   ============================================================ */
+.card-product {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-product:hover {
+  border-color: rgba(212,168,67,0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.45);
+}
+
+.card-product .product-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-product .product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-product:hover .product-img img {
+  transform: scale(1.1);
+}
+
+.card-product .product-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.card-product .product-quick-add {
+  width: 100%;
+  padding: 10px;
+  background: rgba(212,168,67,0.9);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.card-product:hover .product-quick-add {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-product .product-body {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-product .product-category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  font-family: var(--font-accent);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.card-product .product-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-accent);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.card-product .product-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.card-product .product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-product .product-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--gold);
+  font-family: var(--font-accent);
+}
+
+.card-product .product-add-btn {
+  width: 38px;
+  height: 38px;
+  background: var(--gold-gradient);
+  border: none;
+  border-radius: 50%;
+  color: #000;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card-product .product-add-btn:hover {
+  transform: scale(1.15) rotate(90deg);
+  box-shadow: var(--glow-gold);
+}
+
+/* ============================================================
+   SECTION 12 — CATEGORY FEATURE CARDS (for index page)
+   ============================================================ */
+.card-category-feature {
+  position: relative;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-category-feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card-category-feature:hover img {
+  transform: scale(1.12);
+}
+
+.card-category-feature .cat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  transition: background 0.4s ease;
+}
+
+.card-category-feature:hover .cat-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 60%, rgba(212,168,67,0.1) 100%);
+}
+
+.card-category-feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.5), 0 0 0 2px rgba(212,168,67,0.4);
+}
+
+.card-category-feature .cat-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.card-category-feature .cat-count {
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-family: var(--font-accent);
+}
+
+/* ============================================================
+   SECTION 13 — SPECIALS SLIDER (overriding swiper food cards)
+   ============================================================ */
+.specials-slider .swiper-slide {
+  width: 320px;
+}
+
+.specials-slider .food-card {
+  border-radius: 20px;
+  background: linear-gradient(145deg, #161616, #121212);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.specials-slider .food-card:hover {
+  border-color: rgba(212,168,67,0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 30px rgba(212,168,67,0.15);
+}
+
+.specials-slider .food-card-img {
+  height: 230px;
+  overflow: hidden;
+  position: relative;
+}
+
+.specials-slider .food-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.specials-slider .food-card:hover .food-card-img img {
+  transform: scale(1.1);
+}
+
+.specials-slider .food-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 55%);
+}
+
+.specials-slider .food-card-body {
+  padding: 1.3rem;
+}
+
+.specials-slider .add-to-cart-btn {
+  background: var(--gold-gradient);
+  color: #000;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.specials-slider .add-to-cart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(212,168,67,0.5);
+  color: #000;
+}
+
+/* ============================================================
+   SECTION 14 — HOW IT WORKS (Neumorphic Steps)
+   ============================================================ */
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.hiw-step {
+  background: #141414;
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow:
+    6px 6px 18px #0d0d0d,
+    -6px -6px 18px #1c1c1c;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.hiw-step::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(212,168,67,0.04);
+  pointer-events: none;
+}
+
+.hiw-step:hover {
+  box-shadow:
+    2px 2px 6px #0d0d0d,
+    -2px -2px 6px #1c1c1c,
+    inset 4px 4px 12px #0d0d0d,
+    inset -4px -4px 12px #1c1c1c;
+  transform: translateY(-4px);
+}
+
+.hiw-icon {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.5rem;
+  border-radius: 16px;
+  background: #141414;
+  box-shadow:
+    4px 4px 10px #0d0d0d,
+    -4px -4px 10px #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--gold);
+  transition: all 0.3s ease;
+}
+
+.hiw-step:hover .hiw-icon {
+  box-shadow:
+    inset 3px 3px 8px #0d0d0d,
+    inset -3px -3px 8px #1c1c1c;
+  color: var(--gold-light);
+}
+
+.hiw-number {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background: var(--gold-gradient);
+  border-radius: 50%;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-title {
+  font-family: var(--font-accent);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.hiw-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SECTION 15 — OFFER CARDS (Glassmorphism Redesign)
+   ============================================================ */
+.offer-card {
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  cursor: pointer;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.offer-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.offer-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.offer-card-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.offer-card-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.3);
+  border: 1.5px dashed rgba(255,255,255,0.5);
+  border-radius: 10px;
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+  backdrop-filter: blur(8px);
+}
+
+.offer-card-code:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.8);
+}
+
+.offer-card-code::after {
+  content: '📋';
+  font-size: 0.85rem;
+}
+
+.offer-card-pattern {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+.offer-card-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.08);
+}
+
+/* ============================================================
+   SECTION 16 — ANIMATIONS & KEYFRAMES
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.animate-scale {
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Stagger delays for grid items */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ============================================================
+   SECTION 17 — RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .card-flip { height: 260px; }
+  .card-3d .food-card-img { height: 180px; }
+  .specials-slider .swiper-slide { width: 280px; }
+  .specials-slider .food-card-img { height: 190px; }
+  .card-category-feature { height: 180px; }
+  .card-dashboard { flex-direction: column; align-items: flex-start; }
+  .how-it-works-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .how-it-works-grid { grid-template-columns: 1fr; }
+  .card-glass { padding: 1.5rem 1.2rem; }
+  .card-glow  { padding: 1.5rem 1.2rem; }
+  .offer-card { padding: 1.5rem; }
+}

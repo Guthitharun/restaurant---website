@@ -322,3 +322,359 @@
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   BASKET PANEL — Direct WhatsApp Order
+   ========================================================================== */
+
+#basket-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  background: linear-gradient(135deg, #131313 0%, #1a1a0f 100%);
+  border-top: 2px solid var(--gold, #d4a843);
+  box-shadow: 0 -8px 40px rgba(212,168,67,0.2);
+  border-radius: 16px 16px 0 0;
+  display: none;
+}
+
+#basket-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#basket-toggle i:first-child {
+  color: var(--gold, #d4a843);
+  font-size: 1.2rem;
+}
+
+#basket-count-badge {
+  background: var(--gold, #d4a843);
+  color: #000;
+  font-weight: 800;
+  font-size: 0.75rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#basket-toggle-label {
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+#basket-toggle-total {
+  margin-left: auto;
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--gold, #d4a843);
+}
+
+#basket-chevron {
+  color: var(--gold, #d4a843);
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.basket-body-hidden {
+  display: none !important;
+}
+
+#basket-body {
+  padding: 0 16px 16px;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.basket-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.basket-row-name {
+  flex: 1;
+  font-size: 0.88rem;
+  color: #ddd;
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+}
+
+.basket-row-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+
+.basket-row-qty button {
+  background: none;
+  border: none;
+  color: var(--gold, #d4a843);
+  cursor: pointer;
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-row-qty span {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  min-width: 18px;
+  text-align: center;
+}
+
+.basket-row-price {
+  font-weight: 700;
+  color: var(--gold, #d4a843);
+  font-size: 0.88rem;
+  min-width: 55px;
+  text-align: right;
+}
+
+.basket-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0 10px;
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+  border-top: 1px solid rgba(212,168,67,0.25);
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.basket-grand-total {
+  color: var(--gold, #d4a843);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.btn-order-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+}
+
+.btn-order-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+}
+
+.btn-order-whatsapp i { font-size: 1.3rem; }
+
+.btn-order-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 8px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d4a843, #f5c518);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-order-call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212,168,67,0.5);
+}
+
+.btn-clear-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  background: transparent;
+  color: #888;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.btn-clear-order:hover {
+  background: rgba(255,80,80,0.1);
+  border-color: rgba(255,80,80,0.35);
+  color: #ff6b6b;
+}
+
+.basket-empty {
+  color: #666;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* ==========================================================================
+   NO-PHOTO FOOD CARDS (Emoji Based)
+   ========================================================================== */
+
+.menu-card-no-img {
+  height: 130px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #282810 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: var(--radius-lg, 12px) var(--radius-lg, 12px) 0 0;
+  overflow: hidden;
+}
+
+.card-emoji-display {
+  font-size: 3.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover .card-emoji-display {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.menu-list-emoji-box {
+  width: 90px;
+  height: 75px;
+  background: linear-gradient(135deg, #1e1e1e, #282810);
+  border: 1px solid rgba(212,168,67,0.15);
+  border-radius: var(--radius-md, 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.menu-list-item:hover .menu-list-emoji-box {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   SIDEBAR CATEGORY BUTTONS
+   ========================================================================== */
+
+.sidebar-cat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: var(--radius-md, 8px);
+  background: transparent;
+  color: var(--text-secondary, #aaa);
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+.sidebar-cat:hover {
+  background: rgba(212,168,67,0.08);
+  color: var(--gold, #d4a843);
+}
+
+.sidebar-cat.active {
+  background: linear-gradient(135deg, #d4a843, #f5c518);
+  color: #000;
+  font-weight: 700;
+}
+
+.cat-emoji { font-size: 1rem; }
+
+/* ==========================================================================
+   CATEGORY TABS (Mobile)
+   ========================================================================== */
+
+.cat-tab {
+  padding: 8px 16px;
+  border: 1px solid rgba(212,168,67,0.25);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary, #aaa);
+  font-family: var(--font-accent, 'Outfit', sans-serif);
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.cat-tab:hover {
+  border-color: var(--gold, #d4a843);
+  color: var(--gold, #d4a843);
+}
+
+.cat-tab.active {
+  background: linear-gradient(135deg, #d4a843, #f5c518);
+  border-color: transparent;
+  color: #000;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0);    }
+}
+
+/* Body bottom padding so basket panel doesn't cover content */
+body.menu-page { padding-bottom: 80px; }
+
+/* ==========================================================================
+   RESPONSIVE — BASKET & CARDS
+   ========================================================================== */
+@media (max-width: 768px) {
+  #basket-toggle { padding: 12px 14px; }
+  .basket-row-name { font-size: 0.82rem; }
+  .btn-order-whatsapp { font-size: 0.93rem; padding: 13px; }
+  .menu-card-no-img { height: 110px; }
+  .card-emoji-display { font-size: 3rem; }
+  .menu-list-emoji-box { width: 70px; height: 60px; font-size: 1.8rem; }
+}

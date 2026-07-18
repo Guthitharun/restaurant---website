@@ -2253,12 +2253,15 @@ ul, ol {
   color: var(--gold);
 }
 
-/* Payment Methods */
+/* Order Type & Payment Methods */
+.order-types,
 .payment-methods {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
 }
+
+.order-type-btn,
 
 .payment-method {
   display: flex;
@@ -2274,14 +2277,20 @@ ul, ol {
   text-align: center;
 }
 
+.order-type-btn:hover,
+
 .payment-method:hover {
   border-color: var(--gold);
 }
+
+.order-type-btn.selected,
 
 .payment-method.selected {
   border-color: var(--gold);
   background: var(--gold-subtle);
 }
+
+.order-type-btn i,
 
 .payment-method i {
   font-size: 1.5rem;

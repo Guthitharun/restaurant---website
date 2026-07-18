@@ -3,70 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADHIRATHA FAMILY RESTAURANT (AC) — Pamuru, Andhra Pradesh</title>
-  
+  <title>ADHIRATHA Family Restaurant (AC) — Pamuru, Andhra Pradesh</title>
+
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Enjoy authentic South Indian, Biryani, Mandi, and Curry at ADHIRATHA Family Restaurant (AC), Pamuru. Order online or reserve a table today.">
+  <meta name="description" content="Enjoy authentic South Indian, Biryani, Mandi, Tandoori, and Curry at ADHIRATHA Family Restaurant (AC), Pamuru. Order online or reserve a table today.">
   <meta name="keywords" content="Adhiratha Restaurant, Pamuru restaurant, family restaurant Pamuru, order food Pamuru, Biryani Pamuru, Mandi Pamuru, AC Restaurant Pamuru">
   <meta name="author" content="Tharun">
+  <meta property="og:title" content="ADHIRATHA Family Restaurant — Pamuru">
+  <meta property="og:description" content="Authentic Indian Biryani, Mandi, Tandoori & Curries in Pamuru, Andhra Pradesh.">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍽️%3C/text%3E%3C/svg%3E" type="image/x-icon">
 
-  <!-- Icons -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Swiper Slider CDN for Carousels -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-  <!-- Premium Stylesheets -->
+  <!-- Swiper Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- Offer Announcement Bar -->
-  <div class="offer-bar">
+  <!-- ============================================================
+       ANNOUNCEMENT / OFFER BAR (scrolling marquee)
+  ============================================================ -->
+  <div class="offer-bar" id="offer-bar">
     <div class="offer-bar-content">
-      <div class="offer-bar-item">🎉 SPECIAL OFFERS AVAILABLE TODAY! ENTER COUPON ON CART PAGE!</div>
+      <div class="offer-bar-item">🎉 SPECIAL OFFERS AVAILABLE TODAY! USE COUPON CODE ON CART PAGE!</div>
       <div class="offer-bar-item">🚀 FREE HOME DELIVERY ON ALL ORDERS ABOVE ₹500!</div>
-      <div class="offer-bar-item">📱 ORDER INSTANTLY VIA WHATSAPP (916301042993)</div>
-      <div class="offer-bar-item">🍖 100% PREMIUM TANDOORI & MANDI ROYAL EXPERIENCES!</div>
+      <div class="offer-bar-item">📱 ORDER INSTANTLY VIA WHATSAPP: +91 63010 42993</div>
+      <div class="offer-bar-item">🍖 100% PREMIUM TANDOORI &amp; ARABIAN MANDI ROYAL EXPERIENCE!</div>
+      <div class="offer-bar-item">🎉 SPECIAL OFFERS AVAILABLE TODAY! USE COUPON CODE ON CART PAGE!</div>
+      <div class="offer-bar-item">🚀 FREE HOME DELIVERY ON ALL ORDERS ABOVE ₹500!</div>
+      <div class="offer-bar-item">📱 ORDER INSTANTLY VIA WHATSAPP: +91 63010 42993</div>
+      <div class="offer-bar-item">🍖 100% PREMIUM TANDOORI &amp; ARABIAN MANDI ROYAL EXPERIENCE!</div>
     </div>
   </div>
 
-  <!-- Header / Navigation -->
-  <header class="navbar">
+  <!-- ============================================================
+       HEADER / NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="main-navbar">
     <div class="container">
+      <!-- Logo / Brand -->
       <a href="index.html" class="nav-brand" id="brand-logo">
         <div class="nav-brand-icon">A</div>
         <div class="nav-brand-text">
           <span class="nav-brand-name">ADHIRATHA</span>
-          <span class="nav-brand-tag">Family Restaurant</span>
+          <span class="nav-brand-tag">Family Restaurant · AC</span>
         </div>
       </a>
 
-      <!-- Desktop Navlinks -->
-      <nav class="nav-links" id="main-navigation">
-        <a href="index.html" class="nav-link">Home</a>
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" id="main-nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
         <a href="about.html" class="nav-link">About Us</a>
         <a href="menu.html" class="nav-link">Menu</a>
-        <a href="reservation.html" class="nav-link">Table Booking</a>
+        <a href="reservation.html" class="nav-link">Book Table</a>
         <a href="reviews.html" class="nav-link">Reviews</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        
-        <!-- Cart & Profile -->
-        <a href="cart.html" class="nav-cart" id="nav-cart-btn">
+
+        <!-- Cart -->
+        <a href="cart.html" class="nav-cart" id="nav-cart-link" title="Your Cart">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="cart-badge" id="nav-cart-badge">0</span>
         </a>
 
-        <!-- Admin link helper -->
-        <a href="admin/index.html" class="nav-link" style="border: 1px dashed var(--border-gold); padding: 5px 12px; margin-left: 10px; border-radius: 5px; color: var(--gold);"><i class="fa-solid fa-lock"></i> Admin</a>
+        <!-- Admin shortcut -->
+        <a href="admin/index.html" class="nav-link" id="admin-nav-link" style="border:1px dashed rgba(212,168,67,0.5); border-radius:8px; padding:6px 14px; font-size:0.8rem;">
+          <i class="fa-solid fa-lock"></i> Admin
+        </a>
       </nav>
 
-      <!-- Toggle Menu for Mobile -->
-      <div class="nav-toggle" id="menu-toggle-btn">
+      <!-- Hamburger Toggle (Mobile) -->
+      <div class="nav-toggle" id="nav-toggle-btn">
         <span></span>
         <span></span>
         <span></span>
@@ -74,26 +87,45 @@
     </div>
   </header>
 
-  <!-- Mobile nav overlay -->
-  <div class="nav-overlay" id="mobile-nav-overlay"></div>
+  <!-- Mobile nav backdrop overlay -->
+  <div class="nav-overlay" id="nav-overlay"></div>
 
-  <!-- 1. Hero Banner Section -->
+  <!-- ============================================================
+       1. HERO SECTION
+  ============================================================ -->
   <section class="hero" id="home-hero">
-    <div class="hero-particles"></div>
+    <!-- Background image with overlay -->
     <div class="hero-bg">
-      <!-- High quality food banner background fallback -->
-      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1200" alt="Restaurant Interior">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=1600" alt="ADHIRATHA Restaurant Atmosphere" loading="eager">
     </div>
-    <div class="hero-content">
-      <span class="hero-label">Luxury Dining Pamuru</span>
-      <h1 class="hero-title">Experience the Royal Feast at <span class="gold">ADHIRATHA</span></h1>
-      <p class="hero-subtitle">Indulge in authentic traditional Indian curries, aromatic Hyderabadi Dum Biryanis, smokey mandis, and sizzling tandooris. Prepared by master chefs in pure hygienic standards.</p>
-      
+
+    <!-- Gold particles effect -->
+    <div class="hero-particles" id="hero-particles-container"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content" id="hero-content-block">
+      <span class="hero-label">✦ Luxury Dining · Pamuru, Andhra Pradesh ✦</span>
+
+      <h1 class="hero-title">
+        Experience the Royal Feast at<br>
+        <span class="gold">ADHIRATHA</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Indulge in authentic traditional Indian curries, aromatic Hyderabadi Dum Biryanis,
+        smoky Arabian Mandis &amp; sizzling Tandooris — prepared by master chefs in pure hygienic standards.
+      </p>
+
       <div class="hero-btns">
-        <a href="menu.html" class="btn btn-gold btn-lg"><i class="fa-solid fa-bowl-rice"></i> Order Now</a>
-        <a href="reservation.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-calendar-check"></i> Book Table</a>
+        <a href="menu.html" class="btn btn-gold btn-lg" id="hero-order-btn">
+          <i class="fa-solid fa-bowl-rice"></i> Order Now
+        </a>
+        <a href="reservation.html" class="btn btn-outline btn-lg" id="hero-book-btn">
+          <i class="fa-solid fa-calendar-check"></i> Book Table
+        </a>
       </div>
 
+      <!-- Stats row -->
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="hero-stat-number">100+</div>
@@ -107,284 +139,615 @@
           <div class="hero-stat-number">AC</div>
           <div class="hero-stat-label">Family Dining</div>
         </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">Free</div>
+          <div class="hero-stat-label">Delivery ₹500+</div>
+        </div>
       </div>
     </div>
 
+    <!-- Scroll down indicator -->
     <div class="hero-scroll">
       <span>Scroll Down</span>
       <div class="hero-scroll-line"></div>
     </div>
   </section>
 
-  <!-- 2. Today's Special Section -->
-  <section class="section" id="todays-specials-section">
+  <!-- ============================================================
+       2. TODAY'S SPECIALS SLIDER SECTION
+  ============================================================ -->
+  <section class="section" id="todays-specials-section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-title">
-        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px;">Chef Recommends</span>
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px; font-family:var(--font-accent);">Chef Recommends</span>
         <h2>Today's Specials</h2>
-        <p class="text-secondary">Handpicked culinary masterpieces prepared fresh today.</p>
+        <p>Handpicked culinary masterpieces prepared fresh daily by our expert chefs.</p>
       </div>
 
-      <!-- Specials Slider (Swiper JS Wrapper) -->
-      <div class="swiper specials-slider mb-4">
+      <!-- Swiper Specials Slider -->
+      <div class="swiper specials-slider" id="specials-swiper">
         <div class="swiper-wrapper" id="specials-slider-wrapper">
-          <!-- Dynamically populated in JavaScript from data.js -->
-          
-          <!-- Sample Slide 1 (Hyderabadi Chicken Biryani) -->
+
+          <!-- Slide 1: Chicken Dum Biryani -->
           <div class="swiper-slide">
             <div class="food-card">
               <div class="food-card-img">
-                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=400" alt="Chicken Dum Biryani">
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=600" alt="Chicken Dum Biryani" loading="lazy">
                 <span class="card-badge badge-bestseller">Bestseller</span>
+                <div class="food-card-overlay">
+                  <a href="menu.html?category=biryani" class="btn btn-gold btn-sm">Order Now</a>
+                </div>
               </div>
               <div class="food-card-body">
                 <div class="food-card-header">
                   <h3 class="food-card-name">Chicken Dum Biryani</h3>
-                  <span class="veg-dot nonveg"></span>
+                  <span class="veg-dot nonveg" title="Non-Vegetarian"></span>
                 </div>
-                <p class="food-card-desc">Slow-cooked Hyderabadi dum biryani with long basmati rice, tender chicken, and saffron.</p>
+                <p class="food-card-desc">Slow-cooked Hyderabadi Dum Biryani with long basmati rice, tender chicken, saffron &amp; whole spices.</p>
                 <div class="food-card-bottom">
                   <span class="food-card-price">₹250</span>
-                  <a href="menu.html?category=biryani" class="add-to-cart-btn"><i class="fa-solid fa-arrow-right"></i> Order</a>
+                  <a href="menu.html?category=biryani" class="add-to-cart-btn" id="special-biryani-btn">
+                    <i class="fa-solid fa-plus"></i> Add
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Sample Slide 2 (Mutton Mandi) -->
+          <!-- Slide 2: Mutton Mandi -->
           <div class="swiper-slide">
             <div class="food-card">
               <div class="food-card-img">
-                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=400" alt="Mutton Mandi">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=600" alt="Mutton Mandi" loading="lazy">
                 <span class="card-badge badge-popular">Popular</span>
+                <div class="food-card-overlay">
+                  <a href="menu.html?category=mandi" class="btn btn-gold btn-sm">Order Now</a>
+                </div>
               </div>
               <div class="food-card-body">
                 <div class="food-card-header">
                   <h3 class="food-card-name">Mutton Mandi</h3>
-                  <span class="veg-dot nonveg"></span>
+                  <span class="veg-dot nonveg" title="Non-Vegetarian"></span>
                 </div>
-                <p class="food-card-desc">Smoked authentic Arabian Mandi served with dry nuts, soup, and tomato chutney.</p>
+                <p class="food-card-desc">Authentic Arabian smoked Mandi with tender mutton pieces served with dry nuts, soup &amp; tomato chutney.</p>
                 <div class="food-card-bottom">
                   <span class="food-card-price">₹400</span>
-                  <a href="menu.html?category=mandi" class="add-to-cart-btn"><i class="fa-solid fa-arrow-right"></i> Order</a>
+                  <a href="menu.html?category=mandi" class="add-to-cart-btn" id="special-mandi-btn">
+                    <i class="fa-solid fa-plus"></i> Add
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Sample Slide 3 (Paneer Butter Masala) -->
+          <!-- Slide 3: Paneer Butter Masala -->
           <div class="swiper-slide">
             <div class="food-card">
               <div class="food-card-img">
-                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=400" alt="Paneer Butter Masala">
-                <span class="card-badge badge-bestseller">Veg Special</span>
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=600" alt="Paneer Butter Masala" loading="lazy">
+                <span class="card-badge badge-veg">Veg Special</span>
+                <div class="food-card-overlay">
+                  <a href="menu.html?category=veg-curry" class="btn btn-gold btn-sm">Order Now</a>
+                </div>
               </div>
               <div class="food-card-body">
                 <div class="food-card-header">
                   <h3 class="food-card-name">Paneer Butter Masala</h3>
-                  <span class="veg-dot veg"></span>
+                  <span class="veg-dot veg" title="Vegetarian"></span>
                 </div>
-                <p class="food-card-desc">Cubes of fresh cottage cheese tossed in a rich, mild sweet creamy tomato gravy.</p>
+                <p class="food-card-desc">Cubes of fresh cottage cheese tossed in a rich, creamy tomato-butter gravy with aromatic spices.</p>
                 <div class="food-card-bottom">
                   <span class="food-card-price">₹230</span>
-                  <a href="menu.html?category=veg-curry" class="add-to-cart-btn"><i class="fa-solid fa-arrow-right"></i> Order</a>
+                  <a href="menu.html?category=veg-curry" class="add-to-cart-btn" id="special-paneer-btn">
+                    <i class="fa-solid fa-plus"></i> Add
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Slide 4: Tandoori Chicken -->
+          <div class="swiper-slide">
+            <div class="food-card">
+              <div class="food-card-img">
+                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=600" alt="Tandoori Chicken" loading="lazy">
+                <span class="card-badge badge-bestseller">Must Try</span>
+                <div class="food-card-overlay">
+                  <a href="menu.html?category=tandoori" class="btn btn-gold btn-sm">Order Now</a>
+                </div>
+              </div>
+              <div class="food-card-body">
+                <div class="food-card-header">
+                  <h3 class="food-card-name">Tandoori Chicken Full</h3>
+                  <span class="veg-dot nonveg" title="Non-Vegetarian"></span>
+                </div>
+                <p class="food-card-desc">Whole chicken marinated overnight in yogurt and spices, slow-roasted in traditional clay tandoor oven.</p>
+                <div class="food-card-bottom">
+                  <span class="food-card-price">₹450</span>
+                  <a href="menu.html?category=tandoori" class="add-to-cart-btn" id="special-tandoori-btn">
+                    <i class="fa-solid fa-plus"></i> Add
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5: Prawn Fry -->
+          <div class="swiper-slide">
+            <div class="food-card">
+              <div class="food-card-img">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=600" alt="Spicy Prawn Fry" loading="lazy">
+                <span class="card-badge badge-popular">Spicy 🌶️</span>
+                <div class="food-card-overlay">
+                  <a href="menu.html?category=prawns" class="btn btn-gold btn-sm">Order Now</a>
+                </div>
+              </div>
+              <div class="food-card-body">
+                <div class="food-card-header">
+                  <h3 class="food-card-name">Andhra Prawn Fry</h3>
+                  <span class="veg-dot nonveg" title="Non-Vegetarian"></span>
+                </div>
+                <p class="food-card-desc">Juicy tiger prawns marinated in fiery Andhra-style red chili masala, deep-fried to crispy perfection.</p>
+                <div class="food-card-bottom">
+                  <span class="food-card-price">₹350</span>
+                  <a href="menu.html?category=prawns" class="add-to-cart-btn" id="special-prawn-btn">
+                    <i class="fa-solid fa-plus"></i> Add
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        
-        <!-- Slider Pagination / Nav -->
+        <!-- Slider controls -->
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
 
-      <div class="text-center mt-4">
-        <a href="menu.html" class="btn btn-gold"><i class="fa-solid fa-burger"></i> View Complete Menu</a>
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="menu.html" class="btn btn-gold btn-lg" id="view-full-menu-btn">
+          <i class="fa-solid fa-utensils"></i> View Complete Menu
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 3. Promotion/Offer Banner Section -->
-  <section class="section" style="background:var(--bg-secondary); position:relative;" id="offers-promo-section">
+  <!-- ============================================================
+       3. WHY CHOOSE US — Features Strip
+  ============================================================ -->
+  <section class="section" id="features-section">
     <div class="container">
       <div class="section-title">
-        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px;">Hot Deals</span>
-        <h2>Active Coupons & Offers</h2>
-        <p class="text-secondary">Limited period offers to save big on your royal dining bills.</p>
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px; font-family:var(--font-accent);">Our Promise</span>
+        <h2>Why Choose ADHIRATHA?</h2>
+        <p>We go beyond food — we deliver a royal experience in every bite.</p>
       </div>
 
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-xl);" id="offers-grid-container">
-        <!-- Coupon 1 -->
-        <div class="offer-card animate-scale" style="background: linear-gradient(135deg, #d4a843, #f5c518)">
-          <div class="offer-card-badge">New User</div>
-          <h3>20% OFF on First Order!</h3>
-          <p>Get instant 20% discount on orders above ₹300 using code WELCOME20.</p>
-          <div class="offer-card-code" onclick="copyToClipboard('WELCOME20')">WELCOME20</div>
-          <div class="offer-card-pattern"></div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-xl);" id="features-grid">
+
+        <!-- Feature 1 -->
+        <div class="card" style="padding: var(--space-xl); text-align:center;" id="feature-quality">
+          <div style="width:70px; height:70px; background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-lg); font-size:1.8rem; color:var(--gold);">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <h3 style="font-family:var(--font-accent); font-size:1.1rem; margin-bottom:var(--space-sm);">100% Quality</h3>
+          <p style="font-size:0.88rem;">Hygienic kitchen spaces, zero compromises on ingredient quality, and fresh cooking batches daily.</p>
         </div>
 
-        <!-- Coupon 2 -->
-        <div class="offer-card animate-scale" style="background: linear-gradient(135deg, #e74c3c, #c0392b)">
-          <div class="offer-card-badge">Combo</div>
-          <h3>Family Biryani Combo</h3>
-          <p>Order Family Biryani and get flat 15% discount on total cart above ₹500.</p>
-          <div class="offer-card-code" onclick="copyToClipboard('FAMILY50')">FAMILY50</div>
-          <div class="offer-card-pattern"></div>
+        <!-- Feature 2 -->
+        <div class="card" style="padding: var(--space-xl); text-align:center;" id="feature-delivery">
+          <div style="width:70px; height:70px; background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-lg); font-size:1.8rem; color:var(--gold);">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 style="font-family:var(--font-accent); font-size:1.1rem; margin-bottom:var(--space-sm);">Fast Delivery</h3>
+          <p style="font-size:0.88rem;">Hot food in thermal bags delivered to your doorstep in 30–45 minutes. Free delivery above ₹500.</p>
         </div>
+
+        <!-- Feature 3 -->
+        <div class="card" style="padding: var(--space-xl); text-align:center;" id="feature-ac">
+          <div style="width:70px; height:70px; background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-lg); font-size:1.8rem; color:var(--gold);">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <h3 style="font-family:var(--font-accent); font-size:1.1rem; margin-bottom:var(--space-sm);">AC Cabin Seating</h3>
+          <p style="font-size:0.88rem;">Comfortable air-conditioned private family cabins for a luxurious, peaceful dining experience.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card" style="padding: var(--space-xl); text-align:center;" id="feature-variety">
+          <div style="width:70px; height:70px; background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto var(--space-lg); font-size:1.8rem; color:var(--gold);">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3 style="font-family:var(--font-accent); font-size:1.1rem; margin-bottom:var(--space-sm);">100+ Dishes</h3>
+          <p style="font-size:0.88rem;">Wide variety from Veg starters, Non-Veg curries, Biryani, Mandi, Seafood, Tandoori &amp; Desserts.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 4. How It Works Section -->
+  <!-- ============================================================
+       4. ACTIVE COUPONS & OFFERS SECTION
+  ============================================================ -->
+  <section class="section" style="background: var(--bg-secondary);" id="offers-promo-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px; font-family:var(--font-accent);">Hot Deals</span>
+        <h2>Active Coupons &amp; Offers</h2>
+        <p>Limited period offers — save big on your royal dining bills.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);" id="offers-grid-container">
+
+        <!-- Coupon 1: WELCOME20 -->
+        <div class="offer-card" style="background:linear-gradient(135deg,#b8922e,#f5c518); border-radius:var(--radius-xl); padding:var(--space-xl); position:relative; overflow:hidden; color:#0a0a0a;" id="offer-card-1">
+          <div style="position:absolute; top:16px; right:16px; background:rgba(0,0,0,0.2); padding:4px 12px; border-radius:var(--radius-pill); font-size:0.7rem; font-weight:700; font-family:var(--font-accent);">New User</div>
+          <h3 style="font-family:var(--font-heading); font-size:1.4rem; margin-bottom:8px; color:#0a0a0a;">20% OFF on First Order!</h3>
+          <p style="font-size:0.9rem; margin-bottom:var(--space-lg); color:#3a2800;">Get instant 20% discount on orders above ₹300. Valid for first-time users only.</p>
+          <div onclick="copyToClipboard('WELCOME20', this)" style="background:rgba(0,0,0,0.15); border:2px dashed rgba(0,0,0,0.4); padding:12px 20px; border-radius:var(--radius-md); font-family:var(--font-accent); font-weight:700; font-size:1.2rem; text-align:center; cursor:pointer; letter-spacing:3px; color:#0a0a0a; transition:all 0.2s;" id="coupon-welcome20">
+            WELCOME20 <i class="fa-regular fa-copy" style="font-size:0.9rem;"></i>
+          </div>
+        </div>
+
+        <!-- Coupon 2: FAMILY50 -->
+        <div class="offer-card" style="background:linear-gradient(135deg,#a91d22,#e74c3c); border-radius:var(--radius-xl); padding:var(--space-xl); position:relative; overflow:hidden; color:white;" id="offer-card-2">
+          <div style="position:absolute; top:16px; right:16px; background:rgba(255,255,255,0.2); padding:4px 12px; border-radius:var(--radius-pill); font-size:0.7rem; font-weight:700; font-family:var(--font-accent);">Family Combo</div>
+          <h3 style="font-family:var(--font-heading); font-size:1.4rem; margin-bottom:8px; color:white;">15% OFF Family Orders!</h3>
+          <p style="font-size:0.9rem; margin-bottom:var(--space-lg); color:rgba(255,255,255,0.85);">Flat 15% off on family orders above ₹500. Perfect for group dining.</p>
+          <div onclick="copyToClipboard('FAMILY50', this)" style="background:rgba(255,255,255,0.15); border:2px dashed rgba(255,255,255,0.5); padding:12px 20px; border-radius:var(--radius-md); font-family:var(--font-accent); font-weight:700; font-size:1.2rem; text-align:center; cursor:pointer; letter-spacing:3px; color:white; transition:all 0.2s;" id="coupon-family50">
+            FAMILY50 <i class="fa-regular fa-copy" style="font-size:0.9rem;"></i>
+          </div>
+        </div>
+
+        <!-- Coupon 3: BIRYANI30 -->
+        <div class="offer-card" style="background:linear-gradient(135deg,#1a5276,#2980b9); border-radius:var(--radius-xl); padding:var(--space-xl); position:relative; overflow:hidden; color:white;" id="offer-card-3">
+          <div style="position:absolute; top:16px; right:16px; background:rgba(255,255,255,0.2); padding:4px 12px; border-radius:var(--radius-pill); font-size:0.7rem; font-weight:700; font-family:var(--font-accent);">Biryani Lovers</div>
+          <h3 style="font-family:var(--font-heading); font-size:1.4rem; margin-bottom:8px; color:white;">30% OFF Biryani Orders!</h3>
+          <p style="font-size:0.9rem; margin-bottom:var(--space-lg); color:rgba(255,255,255,0.85);">Get 30% off on biryani orders above ₹250. Perfect for biryani lovers!</p>
+          <div onclick="copyToClipboard('BIRYANI30', this)" style="background:rgba(255,255,255,0.15); border:2px dashed rgba(255,255,255,0.5); padding:12px 20px; border-radius:var(--radius-md); font-family:var(--font-accent); font-weight:700; font-size:1.2rem; text-align:center; cursor:pointer; letter-spacing:3px; color:white; transition:all 0.2s;" id="coupon-biryani30">
+            BIRYANI30 <i class="fa-regular fa-copy" style="font-size:0.9rem;"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. HOW IT WORKS — Seamless Delivery Flow
+  ============================================================ -->
   <section class="section" id="how-it-works-section">
     <div class="container">
       <div class="section-title">
-        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px;">Process Flow</span>
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px; font-family:var(--font-accent);">Process Flow</span>
         <h2>Seamless Delivery Flow</h2>
-        <p class="text-secondary">How we get your hot and fresh food delivered directly to your doorstep.</p>
+        <p>How we get your hot and fresh food delivered directly to your doorstep.</p>
       </div>
 
-      <div class="how-it-works-grid">
+      <div class="how-it-works-grid" id="hiw-grid">
         <!-- Step 1 -->
-        <div class="hiw-step" data-aos="fade-up" data-aos-delay="0">
+        <div class="hiw-step" id="hiw-step-1">
           <div class="hiw-icon">
             <i class="fa-solid fa-burger"></i>
             <span class="hiw-number">1</span>
           </div>
           <h3 class="hiw-title">Choose Food</h3>
-          <p class="hiw-text">Select your favorite mouth-watering food items from our online menu catalog.</p>
+          <p class="hiw-text">Browse our rich menu of 100+ dishes and select your favourite items.</p>
         </div>
 
         <!-- Step 2 -->
-        <div class="hiw-step" data-aos="fade-up" data-aos-delay="150">
+        <div class="hiw-step" id="hiw-step-2">
           <div class="hiw-icon">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="hiw-number">2</span>
           </div>
           <h3 class="hiw-title">Quick Checkout</h3>
-          <p class="hiw-text">Add to cart, review and complete your order details. Select payment methods.</p>
+          <p class="hiw-text">Add to cart, apply coupon codes, and complete your order with your address.</p>
         </div>
 
         <!-- Step 3 -->
-        <div class="hiw-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="hiw-step" id="hiw-step-3">
           <div class="hiw-icon">
             <i class="fa-solid fa-fire"></i>
             <span class="hiw-number">3</span>
           </div>
           <h3 class="hiw-title">Chef Cooks</h3>
-          <p class="hiw-text">Our expert master chef starts preparing your dishes using hygienic materials.</p>
+          <p class="hiw-text">Our expert master chef prepares your dishes using premium hygienic ingredients.</p>
         </div>
 
         <!-- Step 4 -->
-        <div class="hiw-step" data-aos="fade-up" data-aos-delay="450">
+        <div class="hiw-step" id="hiw-step-4">
           <div class="hiw-icon">
             <i class="fa-solid fa-truck-fast"></i>
             <span class="hiw-number">4</span>
           </div>
           <h3 class="hiw-title">Fast Delivery</h3>
-          <p class="hiw-text">Our delivery rider packs it in thermal bags and delivers it hot at your location.</p>
+          <p class="hiw-text">Our delivery rider packs it in thermal bags and delivers it piping hot to your location.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="footer">
+  <!-- ============================================================
+       6. QUICK CATEGORIES — Browse Menu Shortcuts
+  ============================================================ -->
+  <section class="section" style="background:var(--bg-secondary); padding-top:var(--space-3xl); padding-bottom:var(--space-3xl);" id="categories-section">
     <div class="container">
-      <div class="footer-grid">
-        <!-- Brand / About -->
-        <div class="footer-about">
-          <a href="index.html" class="footer-brand">
-            <div class="nav-brand-icon">A</div>
-            <span class="nav-brand-name">ADHIRATHA</span>
-          </a>
-          <p>ADHIRATHA Family Restaurant (AC) is the finest culinary destination in Pamuru, Andhra Pradesh. Serving genuine hospitality and premium Indian cuisine since years.</p>
-          <div class="footer-social">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <div class="section-title">
+        <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px; font-family:var(--font-accent);">Explore</span>
+        <h2>Browse by Category</h2>
+        <p>Quickly find your favourite food type from our extensive menu.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:var(--space-md);" id="category-shortcuts-grid">
+
+        <a href="menu.html?category=biryani" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-biryani">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🍚</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Biryani</div>
+        </a>
+        <a href="menu.html?category=mandi" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-mandi">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🔥</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Mandi</div>
+        </a>
+        <a href="menu.html?category=tandoori" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-tandoori">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🍖</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Tandoori</div>
+        </a>
+        <a href="menu.html?category=non-veg-curry" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-nonveg-curry">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🍗</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Non-Veg Curry</div>
+        </a>
+        <a href="menu.html?category=veg-curry" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-veg-curry">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🥘</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Veg Curry</div>
+        </a>
+        <a href="menu.html?category=fish" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-fish">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🐟</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Fish</div>
+        </a>
+        <a href="menu.html?category=prawns" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-prawns">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🦐</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Prawns</div>
+        </a>
+        <a href="menu.html?category=veg-starters" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-veg-starters">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🥗</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Veg Starters</div>
+        </a>
+        <a href="menu.html?category=drinks" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none;" id="cat-drinks">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🥤</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary);">Drinks</div>
+        </a>
+        <a href="menu.html" class="card" style="padding:var(--space-lg); text-align:center; display:block; text-decoration:none; border-color:var(--border-gold);" id="cat-all">
+          <div style="font-size:2.5rem; margin-bottom:var(--space-sm);">🍽️</div>
+          <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--gold);">View All</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. ABOUT US MINI SECTION (Teaser — links to full About page)
+  ============================================================ -->
+  <section class="section" id="about-teaser-section">
+    <div class="container">
+      <div class="about-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3xl); align-items:center;" id="about-content-grid">
+
+        <!-- Text side -->
+        <div id="about-text-col">
+          <span class="text-gold text-uppercase text-xs" style="letter-spacing:3px; font-family:var(--font-accent); display:block; margin-bottom:var(--space-md);">Our Legacy</span>
+          <h2 style="margin-bottom:var(--space-lg);">Legacy of Fine Dining in Pamuru</h2>
+          <p style="margin-bottom:var(--space-md);">Located near Highway NH-565, ADHIRATHA Family Restaurant is Pamuru's finest culinary destination. We source premium fresh ingredients and use age-old slow cooking techniques to craft authentic taste masterpieces.</p>
+          <p style="margin-bottom:var(--space-md);">From royal Hyderabadi Dum Biryanis and Arabian Mandis to traditional Andhra spicy fish fry and delicious desserts — our comprehensive menu satisfies every taste bud.</p>
+          <p style="margin-bottom:var(--space-xl);">Our restaurant features high-capacity, fully air-conditioned cabins and customised family dining compartments for privacy and premium comfort.</p>
+
+          <div style="display:flex; gap:var(--space-md); flex-wrap:wrap;">
+            <a href="about.html" class="btn btn-gold" id="about-learn-more-btn">
+              <i class="fa-solid fa-circle-info"></i> Learn More
+            </a>
+            <a href="reservation.html" class="btn btn-outline" id="about-book-btn">
+              <i class="fa-solid fa-calendar-check"></i> Book a Table
+            </a>
           </div>
         </div>
 
-        <!-- Navigation Links -->
-        <div class="footer-col">
+        <!-- Image side -->
+        <div style="position:relative;" id="about-img-col">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=700" alt="ADHIRATHA Restaurant Dining Experience" style="width:100%; height:450px; object-fit:cover; border-radius:var(--radius-xl); border:3px solid var(--border-gold);" id="about-main-img" loading="lazy">
+          <!-- Stats badge overlaid -->
+          <div style="position:absolute; bottom:-20px; left:-20px; background:var(--gold-gradient); color:var(--text-dark); padding:var(--space-lg); border-radius:var(--radius-xl); text-align:center; box-shadow:var(--shadow-lg);" id="about-stats-badge">
+            <div style="font-family:var(--font-heading); font-size:2rem; font-weight:800; line-height:1;">4.8</div>
+            <div style="font-size:1rem; margin:4px 0;">★★★★★</div>
+            <div style="font-family:var(--font-accent); font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Customer Rating</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. CONTACT QUICK BAR
+  ============================================================ -->
+  <section style="background:var(--bg-secondary); padding:var(--space-2xl) 0;" id="contact-quick-bar">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:var(--space-xl); align-items:center;" id="contact-bar-grid">
+
+        <div style="display:flex; align-items:center; gap:var(--space-md);" id="contact-location">
+          <div style="width:50px; height:50px; background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1.3rem; flex-shrink:0;">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary); margin-bottom:2px;">Find Us</div>
+            <div style="font-size:0.82rem; color:var(--text-secondary);">Near NH-565, Govt. Hospital Jn, Pamuru</div>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:var(--space-md);" id="contact-phone">
+          <div style="width:50px; height:50px; background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1.3rem; flex-shrink:0;">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary); margin-bottom:2px;">Call Us</div>
+            <a href="tel:6301042993" style="font-size:0.9rem; color:var(--gold); font-weight:600; display:block;">63010 42993</a>
+            <a href="tel:9666250268" style="font-size:0.82rem; color:var(--text-secondary);">96662 50268</a>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:var(--space-md);" id="contact-hours">
+          <div style="width:50px; height:50px; background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1.3rem; flex-shrink:0;">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary); margin-bottom:2px;">Opening Hours</div>
+            <div style="font-size:0.82rem; color:var(--text-secondary);">Mon–Fri: 11 AM – 11 PM</div>
+            <div style="font-size:0.82rem; color:var(--text-secondary);">Sat–Sun: 11 AM – 11:30 PM</div>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:var(--space-md);" id="contact-whatsapp">
+          <div style="width:50px; height:50px; background:rgba(37,211,102,0.15); border:1px solid rgba(37,211,102,0.4); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#25D366; font-size:1.3rem; flex-shrink:0;">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <div style="font-family:var(--font-accent); font-weight:600; font-size:0.9rem; color:var(--text-primary); margin-bottom:2px;">WhatsApp Order</div>
+            <a href="https://wa.me/916301042993?text=Hello!%20I'd%20like%20to%20order%20food%20from%20Adhiratha%20Restaurant." target="_blank" rel="noopener" style="font-size:0.85rem; color:#25D366; font-weight:600;">Chat &amp; Order Now →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid" id="footer-grid">
+
+        <!-- Brand / About -->
+        <div class="footer-about" id="footer-brand-col">
+          <a href="index.html" class="footer-brand" style="display:flex; align-items:center; gap:var(--space-sm); text-decoration:none; margin-bottom:var(--space-md);">
+            <div class="nav-brand-icon">A</div>
+            <span class="nav-brand-name">ADHIRATHA</span>
+          </a>
+          <p style="font-size:0.88rem; margin-bottom:var(--space-lg);">
+            ADHIRATHA Family Restaurant (AC) is the finest culinary destination in Pamuru, Andhra Pradesh — serving genuine hospitality and premium Indian cuisine.
+          </p>
+          <div class="footer-social" id="footer-social-links">
+            <a href="#" aria-label="Facebook" title="Follow us on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" title="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/916301042993" target="_blank" rel="noopener" aria-label="WhatsApp" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+
+          <!-- App Badge Request -->
+          <div style="margin-top:var(--space-xl); display:inline-flex; align-items:center; gap:15px; background:rgba(212,168,67,0.1); border:1px solid var(--border-gold); padding:10px 20px; border-radius:var(--radius-lg);">
+            <div style="font-family:var(--font-heading); font-size:1.2rem; font-weight:800; color:var(--gold); letter-spacing:2px;">APP</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col" id="footer-links-col">
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links">
             <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
             <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Menu Card</a></li>
             <li><a href="reservation.html"><i class="fa-solid fa-chevron-right"></i> Book a Table</a></li>
+            <li><a href="reviews.html"><i class="fa-solid fa-chevron-right"></i> Reviews</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
           </ul>
         </div>
 
-        <!-- Working Hours -->
-        <div class="footer-col">
+        <!-- Opening Hours -->
+        <div class="footer-col" id="footer-hours-col">
           <h4 class="footer-heading">Opening Hours</h4>
-          <ul class="footer-links" style="color:var(--text-secondary); font-size:0.9rem;">
-            <li style="margin-bottom:10px;"><strong>Monday - Friday:</strong><br>11:00 AM – 11:00 PM</li>
-            <li><strong>Saturday - Sunday:</strong><br>11:00 AM – 11:30 PM</li>
+          <ul class="footer-links" style="color:var(--text-secondary); font-size:0.88rem;">
+            <li style="margin-bottom:12px;"><strong style="color:var(--text-primary);">Monday – Friday:</strong><br>11:00 AM – 11:00 PM</li>
+            <li><strong style="color:var(--text-primary);">Saturday – Sunday:</strong><br>11:00 AM – 11:30 PM</li>
           </ul>
+          <div style="margin-top:var(--space-lg); background:var(--gold-subtle); border:1px solid var(--border-gold); border-radius:var(--radius-md); padding:12px; text-align:center;">
+            <span style="font-family:var(--font-accent); font-size:0.8rem; color:var(--gold); font-weight:600;">🟢 Currently Open</span>
+          </div>
         </div>
 
-        <!-- Address & Contact -->
-        <div class="footer-col">
+        <!-- Contact Info -->
+        <div class="footer-col" id="footer-contact-col">
           <h4 class="footer-heading">Contact Us</h4>
-          <div class="footer-contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Near Highway (NH-565),<br>Near Govt. Hospital, Pamuru,<br>Andhra Pradesh - 523108</span>
+          <div class="footer-contact-item" style="display:flex; gap:var(--space-sm); margin-bottom:var(--space-md); align-items:flex-start;">
+            <i class="fa-solid fa-location-dot" style="color:var(--gold); margin-top:3px; flex-shrink:0;"></i>
+            <span style="font-size:0.88rem; color:var(--text-secondary);">Near Highway (NH-565), Near Govt. Hospital, Pamuru, Andhra Pradesh – 523108</span>
           </div>
-          <div class="footer-contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <span>63010 42993<br>96662 50268</span>
+          <div class="footer-contact-item" style="display:flex; gap:var(--space-sm); align-items:flex-start;">
+            <i class="fa-solid fa-phone" style="color:var(--gold); margin-top:3px; flex-shrink:0;"></i>
+            <div style="font-size:0.88rem;">
+              <div style="color:var(--text-secondary); margin-bottom:4px; font-size: 0.8rem;">Managed by:</div>
+              <a href="tel:6301042993" style="color:var(--gold); display:block; font-weight:600; margin-bottom:2px;">Jamakala Obulesh: 63010 42993</a>
+              <a href="tel:9912281479" style="color:var(--text-secondary); display:block; margin-bottom:2px;">Varukute Hanumanthu: 99122 81479</a>
+              <a href="tel:9666250268" style="color:var(--text-secondary); display:block;">Pula Madhava: 96662 50268</a>
+            </div>
+          </div>
+          <div class="footer-contact-item" style="display:flex; gap:var(--space-sm); align-items:center;">
+            <i class="fa-brands fa-whatsapp" style="color:#25D366; flex-shrink:0;"></i>
+            <a href="https://wa.me/916301042993" target="_blank" rel="noopener" style="color:#25D366; font-size:0.88rem; font-weight:600;">Order on WhatsApp</a>
           </div>
         </div>
+
       </div>
 
-      <!-- Copyright Area -->
-      <div class="footer-bottom">
-        <p>&copy; 2026 ADHIRATHA Family Restaurant. All Rights Reserved. Made with <i class="fa-solid fa-heart heart"></i> in Andhra Pradesh.</p>
+      <!-- Footer Bottom Copyright -->
+      <div class="footer-bottom" id="footer-bottom">
+        <p>&copy; 2026 ADHIRATHA Family Restaurant (AC). All Rights Reserved. Made with <i class="fa-solid fa-heart" style="color:#e74c3c;"></i> in Andhra Pradesh.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Buttons (WhatsApp, Call and Back to Top) -->
-  <div class="floating-btns">
-    <!-- Click to Call Button 1 -->
-    <a href="tel:6301042993" class="float-btn float-btn-call" title="Call Us 6301042993">
+  <!-- ============================================================
+       FLOATING ACTION BUTTONS
+  ============================================================ -->
+  <div class="floating-btns" id="floating-action-btns">
+    <!-- Call Button -->
+    <a href="tel:6301042993" class="float-btn float-btn-call" title="Call: 63010 42993" id="float-call-btn">
       <i class="fa-solid fa-phone"></i>
-      <span class="float-btn-tooltip">Call: 6301042993</span>
+      <span class="float-btn-tooltip">Call: 63010 42993</span>
     </a>
-    
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/916301042993?text=Hello!%20I'd%20like%20to%20order%20some%20food%20from%20Adhiratha%20Restaurant." target="_blank" class="float-btn float-btn-whatsapp" title="WhatsApp Order">
+
+    <!-- WhatsApp Order Button -->
+    <a href="https://wa.me/916301042993?text=Hello!%20I'd%20like%20to%20order%20food%20from%20Adhiratha%20Restaurant." target="_blank" rel="noopener" class="float-btn float-btn-whatsapp" title="WhatsApp Order" id="float-whatsapp-btn">
       <i class="fa-brands fa-whatsapp"></i>
       <span class="float-btn-tooltip">Order on WhatsApp</span>
     </a>
 
-    <!-- Scroll to Top Button -->
-    <button class="float-btn float-btn-top" id="scroll-to-top-btn" title="Back to Top">
+    <!-- Scroll To Top Button -->
+    <button class="float-btn float-btn-top" id="scroll-to-top-btn" title="Back to Top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
   </div>
 
-  <!-- JavaScript Utilities -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
-  
-  <!-- Swiper Slider JS -->
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <!-- Swiper JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-  <!-- Slider Initialization -->
+  <!-- Restaurant Data -->
+  <script src="js/data.js"></script>
+
+  <!-- Core App Logic -->
+  <script src="js/app.js"></script>
+
+  <!-- Specials Slider Init + Copy Coupon Function -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+      // ── Specials Swiper Slider ──────────────────────────
       new Swiper('.specials-slider', {
-        slidesPerView: "auto",
+        slidesPerView: 1,
         spaceBetween: 24,
-        centeredSlides: false,
         loop: true,
         grabCursor: true,
+        centeredSlides: false,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -394,12 +757,74 @@
           prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-          320: { slidesPerView: 1 },
-          640: { slidesPerView: 2 },
+          640:  { slidesPerView: 2 },
           1024: { slidesPerView: 3 }
-        }
+        },
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
       });
+
+      // ── Hero Particle Effect ──────────────────────────
+      const container = document.getElementById('hero-particles-container');
+      if (container) {
+        for (let i = 0; i < 20; i++) {
+          const p = document.createElement('div');
+          p.className = 'particle';
+          p.style.left = Math.random() * 100 + '%';
+          p.style.animationDelay = Math.random() * 6 + 's';
+          p.style.animationDuration = (5 + Math.random() * 5) + 's';
+          p.style.width = (2 + Math.random() * 4) + 'px';
+          p.style.height = p.style.width;
+          container.appendChild(p);
+        }
+      }
+
+      // ── AOS-like scroll reveal via Intersection Observer ──
+      const aos = document.querySelectorAll('.card, .hiw-step, .offer-card');
+      const aosObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+            aosObserver.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      aos.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        aosObserver.observe(el);
+      });
+
     });
+
+    // ── Copy Coupon to Clipboard ────────────────────────────
+    function copyToClipboard(code, el) {
+      navigator.clipboard.writeText(code).then(() => {
+        const original = el.innerHTML;
+        el.innerHTML = `✅ Copied! Apply on Cart`;
+        el.style.background = 'rgba(46,204,113,0.3)';
+        setTimeout(() => {
+          el.innerHTML = original;
+          el.style.background = '';
+        }, 2500);
+      }).catch(() => {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (typeof showToast === 'function') showToast('Coupon code "' + code + '" copied to clipboard!', 'success');
+      });
+    }
   </script>
+
 </body>
 </html>

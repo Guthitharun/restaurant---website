@@ -251,16 +251,11 @@ function setupCheckoutButton() {
   if (!btn) return;
 
   btn.addEventListener('click', () => {
-    // Check if user is logged in
-    if (!AuthStore.isLoggedIn()) {
-      showToast('Please login to place your order', 'warning');
-      setTimeout(() => {
-        window.location.href = 'login.html?redirect=cart.html';
-      }, 1500);
+    if (CartStore.getCart().length === 0) {
+      showToast('Your cart is empty. Add some items first!', 'warning');
       return;
     }
-    
-    // Redirect to checkout
+    // Redirect directly to checkout page
     window.location.href = 'checkout.html';
   });
 }
