@@ -1,0 +1,119 @@
+/*
+================================================================
+    ADHIRATHA FAMILY RESTAURANT (A/C) - PREMIUM STYLESHEET
+================================================================
+*/
+
+/* --------------------------------------------------
+   1. VARIABLES & DESIGN SYSTEM
+-------------------------------------------------- */
+:root {
+    /* Color Palette */
+    --bg-dark: #120b08;          /* Rich Dark Brown background */
+    --bg-dark-variant: #1c110c;  /* Card & offset dark background */
+    --bg-light: #faf7f2;         /* Soft Creamy Light background */
+    --bg-light-variant: #f3ece0; /* Offset light background */
+    
+    --primary: #c5a880;          /* Elegant Muted Gold */
+    --primary-light: #e2cca8;    /* Lighter gold for hover highlight */
+    --primary-dark: #9e7f59;     /* Darker gold for active states */
+    
+    --accent-red: #a91d22;       /* Crimson red for buttons/alerts */
+    --accent-red-hover: #821216;
+    
+    --text-light: #f5eedf;       /* Off-white text for dark backgrounds */
+    --text-muted: #b8aba0;       /* Muted brown-gray for dark bg body text */
+    --text-dark: #2a1f1a;        /* Dark charcoal brown for light backgrounds */
+    --text-dark-muted: #6e5c54;  /* Muted dark brown for body text on light bg */
+    
+    --success-green: #2e7d32;    /* Dark green for successful booking validation */
+    --border-light: rgba(197, 168, 128, 0.2); /* Soft gold borders */
+    
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Transition & Shadows */
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.35);
+    --shadow-gold: 0 0 15px rgba(197, 168, 128, 0.2);
+}
+
+/* --------------------------------------------------
+   2. RESET & BASE STYLES
+-------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-dark);
+    border-radius: 5px;
+    border: 2px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Selection colors */
+::selection {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+/* Rest of the CSS continues... */
