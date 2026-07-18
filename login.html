@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login / Register — ADHIRATHA Restaurant</title>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-wrapper">
+
+  <div class="auth-card animate-scale">
+    <!-- Header Back link -->
+    <a href="index.html" style="font-size:0.85rem; color:var(--text-muted); display:inline-flex; align-items:center; gap:5px; margin-bottom:20px;">
+      <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+
+    <!-- Auth Tabs toggles -->
+    <div class="auth-tabs">
+      <div class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Sign In</div>
+      <div class="auth-tab" id="tab-register" onclick="switchAuthTab('register')">Register</div>
+    </div>
+
+    <!-- Login Area Form -->
+    <form id="login-form" class="auth-form-content">
+      <div class="form-group">
+        <label for="login-phone" class="form-label">Phone Number</label>
+        <input type="tel" id="login-phone" class="form-input" placeholder="Your registered mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="login-pass" class="form-label">Password</label>
+        <input type="password" id="login-pass" class="form-input" placeholder="Password" required>
+      </div>
+
+      <button type="submit" class="btn btn-gold btn-block btn-lg mt-2">Sign In</button>
+    </form>
+
+    <!-- Register Area Form -->
+    <form id="register-form" class="auth-form-content hidden">
+      <div class="form-group">
+        <label for="reg-name" class="form-label">Full Name</label>
+        <input type="text" id="reg-name" class="form-input" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-phone" class="form-label">Phone Number</label>
+        <input type="tel" id="reg-phone" class="form-input" placeholder="10-digit mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-pass" class="form-label">Password</label>
+        <input type="password" id="reg-pass" class="form-input" placeholder="Choose password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-address" class="form-label">Delivery Address (Default)</label>
+        <textarea id="reg-address" class="form-textarea" placeholder="Your street address..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-landmark" class="form-label">Landmark</label>
+        <input type="text" id="reg-landmark" class="form-input" placeholder="Key landmark area" required>
+      </div>
+
+      <button type="submit" class="btn btn-gold btn-block btn-lg mt-2">Create Account</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    // Tab toggler switch
+    function switchAuthTab(type) {
+      const loginTab = document.getElementById('tab-login');
+      const regTab = document.getElementById('tab-register');
+      const loginForm = document.getElementById('login-form');
+      const regForm = document.getElementById('register-form');
+
+      if (type === 'login') {
+        loginTab.classList.add('active');
+        regTab.classList.remove('active');
+        loginForm.classList.remove('hidden');
+        regForm.classList.add('hidden');
+      } else {
+        loginTab.classList.remove('active');
+        regTab.classList.add('active');
+        loginForm.classList.add('hidden');
+        regForm.classList.remove('hidden');
+      }
+    }
+
+    // Submit handler
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check redirect param
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirect = urlParams.get('redirect') || 'index.html';
+
+      // Login form submit
+      const loginForm = document.getElementById('login-form');
+      if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const phone = document.getElementById('login-phone').value.trim();
+          const pass = document.getElementById('login-pass').value.trim();
+
+          // Quick seed for testing: if users list empty, seed user first
+          if (AuthStore.getAllUsers().length === 0) {
+            AuthStore.registerUser({
+              name: 'Tharun Guthi',
+              phone: '9999999999',
+              password: 'pass',
+              address: 'Near Govt Hospital, Pamuru',
+              landmark: 'NH-565'
+            });
+          }
+
+          const res = AuthStore.loginUser(phone, pass);
+          if (res.success) {
+            showToast('Login successful! Redirecting...', 'success');
+            setTimeout(() => {
+              window.location.href = redirect;
+            }, 1000);
+          } else {
+            showToast(res.message || 'Invalid credentials', 'error');
+          }
+        });
+      }
+
+      // Register form submit
+      const regForm = document.getElementById('register-form');
+      if (regForm) {
+        regForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('reg-name').value.trim();
+          const phone = document.getElementById('reg-phone').value.trim();
+          const password = document.getElementById('reg-pass').value.trim();
+          const address = document.getElementById('reg-address').value.trim();
+          const landmark = document.getElementById('reg-landmark').value.trim();
+
+          if (!/^\d{10}$/.test(phone)) {
+            showToast('Please enter a valid 10 digit number', 'error');
+            return;
+          }
+
+          const res = AuthStore.registerUser({ name, phone, password, address, landmark });
+          if (res.success) {
+            showToast('Registration successful!', 'success');
+            setTimeout(() => {
+              window.location.href = redirect;
+            }, 1000);
+          } else {
+            showToast(res.message, 'error');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

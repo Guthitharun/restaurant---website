@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — ADHIRATHA Family Restaurant</title>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="menu-page">
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">A</div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">ADHIRATHA</span>
+          <span class="nav-brand-tag">Family Restaurant</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="reservation.html" class="nav-link">Table Booking</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        
+        <a href="cart.html" class="nav-cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </nav>
+
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay"></div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p class="text-secondary">Have queries regarding party bookings, home delivery, or menu items? Reach out to us.</p>
+    </div>
+  </section>
+
+  <!-- Contact Cards & Maps -->
+  <section class="section" style="padding-top: var(--space-xl);">
+    <div class="container">
+      
+      <div class="contact-grid mb-4">
+        
+        <!-- Left: Details & Quick Contact options -->
+        <div style="display:flex; flex-direction:column; gap:15px;">
+          <h2 style="font-family:var(--font-heading); color:var(--gold);" class="mb-2">ADHIRATHA PAMURU</h2>
+          
+          <!-- Card 1: Map location info -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4 style="font-family:var(--font-accent); color:var(--text-primary);">Address Location</h4>
+              <p class="text-sm">Near Highway (NH-565), Near Govt. Hospital, Pamuru, Andhra Pradesh - 523108</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Phone numbers click to call -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div>
+              <h4 style="font-family:var(--font-accent); color:var(--text-primary);">Contact Numbers</h4>
+              <p class="text-sm" style="margin-bottom:5px;">Click numbers below to call us directly:</p>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2px;">Managed by:</div>
+                <a href="tel:6301042993" class="btn btn-gold btn-sm" style="justify-content: flex-start;"><i class="fa-solid fa-phone"></i> Jamakala Obulesh: 63010 42993</a>
+                <a href="tel:9912281479" class="btn btn-dark btn-sm" style="justify-content: flex-start;"><i class="fa-solid fa-phone"></i> Varukute Hanumanthu: 99122 81479</a>
+                <a href="tel:9666250268" class="btn btn-dark btn-sm" style="justify-content: flex-start;"><i class="fa-solid fa-phone"></i> Pula Madhava: 96662 50268</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: WhatsApp direct chat -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <h4 style="font-family:var(--font-accent); color:var(--text-primary);">WhatsApp Order Line</h4>
+              <p class="text-sm mb-2">Connect instantly with our staff for home delivery orders:</p>
+              <a href="https://wa.me/916301042993?text=Hello!%20I'm%20contacting%20you%20from%20your%20website." target="_blank" class="btn btn-whatsapp btn-sm">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Map embed section -->
+        <div>
+          <div class="map-embed" style="height:100%; min-height:350px;">
+            <!-- Map locator for Pamuru -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15365.123!2d79.913!3d15.115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPamuru!5e0!3m2!1sen!2sin!4v1700000000000" loading="lazy"></iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact query submit form -->
+      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-xl); padding:35px; max-width:700px; margin:40px auto 0;">
+        <h3 class="mb-3 text-center" style="font-family:var(--font-heading); color:var(--gold);">Submit Inquiry Form</h3>
+        <p class="text-center text-muted text-sm mb-4">Have special queries or catering requests? Write to us and we'll reply shortly.</p>
+        
+        <form onsubmit="event.preventDefault(); showToast('Your query inquiry has been submitted! Our team will contact you shortly.', 'success'); this.reset();">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="10-digit mobile" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message / Query details</label>
+            <textarea class="form-textarea" placeholder="Describe your requirement (e.g. details of catering menu, bulk birthday orders...)" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block">Send Inquiry</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

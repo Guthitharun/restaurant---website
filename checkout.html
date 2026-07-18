@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout — ADHIRATHA Family Restaurant</title>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="menu-page" id="checkout-page-container">
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">A</div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">ADHIRATHA</span>
+          <span class="nav-brand-tag">Family Restaurant</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="reservation.html" class="nav-link">Table Booking</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        
+        <a href="cart.html" class="nav-cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </nav>
+
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay"></div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Secure Checkout</h1>
+      <p class="text-secondary">Provide delivery address, select payments and place order copy instantly.</p>
+    </div>
+  </section>
+
+  <!-- Checkout Section -->
+  <section class="section" style="padding-top: var(--space-xl);">
+    <div class="container">
+      
+      <div class="checkout-grid">
+        
+        <!-- Forms Details Column -->
+        <div>
+          <form id="checkout-form">
+            <!-- 1. Customer Information -->
+            <div class="checkout-section">
+              <h3 class="checkout-section-title">
+                <i class="fa-solid fa-user-check"></i> 1. Contact Information
+              </h3>
+              
+              <div class="form-group">
+                <label for="checkout-name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="checkout-name" class="form-input" placeholder="Enter full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="checkout-phone" class="form-label">Mobile Number <span class="required">*</span></label>
+                <input type="tel" id="checkout-phone" class="form-input" placeholder="10-digit mobile number" required>
+              </div>
+
+              <div class="form-group">
+                <label for="checkout-email" class="form-label">Gmail Address <span class="required">*</span></label>
+                <input type="email" id="checkout-email" class="form-input" placeholder="Enter your Gmail address" required>
+              </div>
+            </div>
+
+            <!-- 2. Order Type -->
+            <div class="checkout-section">
+              <h3 class="checkout-section-title">
+                <i class="fa-solid fa-bell-concierge"></i> 2. Order Type
+              </h3>
+              
+              <div class="order-types mb-3" style="display:flex; gap:10px; flex-wrap:wrap;">
+                <div class="order-type-btn selected" data-type="delivery" onclick="selectOrderType('delivery')" style="cursor:pointer; padding:10px 15px; border:1px solid var(--border-color); border-radius:var(--radius-md);">
+                  <i class="fa-solid fa-motorcycle"></i> Home Delivery
+                </div>
+                <div class="order-type-btn" data-type="takeaway" onclick="selectOrderType('takeaway')" style="cursor:pointer; padding:10px 15px; border:1px solid var(--border-color); border-radius:var(--radius-md);">
+                  <i class="fa-solid fa-bag-shopping"></i> Take Away
+                </div>
+                <div class="order-type-btn" data-type="dinein" onclick="selectOrderType('dinein')" style="cursor:pointer; padding:10px 15px; border:1px solid var(--border-color); border-radius:var(--radius-md);">
+                  <i class="fa-solid fa-utensils"></i> Dine In
+                </div>
+              </div>
+              <input type="hidden" id="order-type-input" value="delivery">
+
+              <!-- Delivery Fields -->
+              <div id="delivery-fields">
+                <div class="form-group">
+                  <label for="checkout-address" class="form-label">Delivery Address <span class="required">*</span></label>
+                  <textarea id="checkout-address" class="form-textarea" placeholder="Enter complete address details" required></textarea>
+                </div>
+              </div>
+
+              <!-- Dine In Fields -->
+              <div id="dinein-fields" style="display:none;">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="checkout-persons" class="form-label">Number of Persons <span class="required">*</span></label>
+                    <input type="number" id="checkout-persons" class="form-input" min="1" placeholder="E.g. 2">
+                  </div>
+                  <div class="form-group">
+                    <label for="checkout-date" class="form-label">Booking Date <span class="required">*</span></label>
+                    <input type="date" id="checkout-date" class="form-input">
+                  </div>
+                  <div class="form-group">
+                    <label for="checkout-time" class="form-label">Booking Time <span class="required">*</span></label>
+                    <input type="time" id="checkout-time" class="form-input">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Special Instructions -->
+              <div class="form-group mt-3">
+                <label for="checkout-instructions" class="form-label">Special Instructions (Optional)</label>
+                <textarea id="checkout-instructions" class="form-textarea" placeholder="E.g. Less spicy, extra onions..."></textarea>
+              </div>
+            </div>
+
+            <!-- 3. Payment Method -->
+            <div class="checkout-section">
+              <h3 class="checkout-section-title">
+                <i class="fa-solid fa-credit-card"></i> 3. Payment Method
+              </h3>
+
+              <div class="payment-methods mb-3" style="display:flex; flex-wrap:wrap; gap:10px;">
+                <div class="payment-method selected" data-method="cod" onclick="selectPaymentMethod(this, 'cod')" style="cursor:pointer;">
+                  <i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery
+                </div>
+                <div class="payment-method" data-method="gpay" onclick="selectPaymentMethod(this, 'gpay')" style="cursor:pointer;">
+                  <i class="fa-brands fa-google-pay"></i> Google Pay
+                </div>
+                <div class="payment-method" data-method="phonepe" onclick="selectPaymentMethod(this, 'phonepe')" style="cursor:pointer;">
+                  <i class="fa-solid fa-mobile-screen"></i> PhonePe
+                </div>
+                <div class="payment-method" data-method="paytm" onclick="selectPaymentMethod(this, 'paytm')" style="cursor:pointer;">
+                  <i class="fa-solid fa-wallet"></i> Paytm
+                </div>
+                <div class="payment-method" data-method="upi" onclick="selectPaymentMethod(this, 'upi')" style="cursor:pointer;">
+                  <i class="fa-solid fa-qrcode"></i> Any UPI
+                </div>
+              </div>
+              <input type="hidden" id="payment-method-input" value="cod">
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <button type="submit" class="btn btn-gold btn-block btn-lg" id="btn-place-order">
+                <i class="fa-solid fa-circle-check"></i> Place Order
+              </button>
+              <div style="display:flex; gap:10px;">
+                <a href="menu.html" class="btn btn-block" style="background:#333; color:#fff; flex:1;">
+                  <i class="fa-solid fa-cart-plus"></i> Continue Shopping
+                </a>
+                <button type="button" class="btn btn-block" style="background:var(--bg-tertiary); color:var(--text-primary); border:1px solid var(--border-color); flex:1;" onclick="clearCartAndRedirect()">
+                  <i class="fa-solid fa-trash"></i> Clear Cart
+                </button>
+              </div>
+            </div>>
+          </form>
+        </div>
+
+        <!-- Sidebar Summary Columns -->
+        <div>
+          <div class="cart-summary">
+            <h3 class="cart-summary-title">Order Summary</h3>
+            
+            <div id="checkout-items-list" style="max-height: 250px; overflow-y: auto; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px dashed var(--border-color);">
+              <!-- Render items list -->
+            </div>
+
+            <div class="cart-summary-row total">
+              <span>Total Amount:</span>
+              <span id="checkout-total">₹0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="footer-brand" style="display:flex; align-items:center; gap:var(--space-sm); text-decoration:none; margin-bottom:var(--space-md);">
+            <div class="nav-brand-icon">A</div>
+            <span class="nav-brand-name">ADHIRATHA</span>
+          </a>
+          <p style="font-size:0.88rem; margin-bottom:var(--space-lg);">ADHIRATHA Family Restaurant (AC) is the finest culinary destination in Pamuru, Andhra Pradesh — serving genuine hospitality and premium Indian cuisine.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/916301042993" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+
+          <!-- App Badge Request -->
+          <div style="margin-top:var(--space-xl); display:inline-flex; align-items:center; gap:15px; background:rgba(212,168,67,0.1); border:1px solid var(--border-gold); padding:10px 20px; border-radius:var(--radius-lg);">
+            <div style="font-family:var(--font-heading); font-size:1.2rem; font-weight:800; color:var(--gold); letter-spacing:2px;">APP</div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Menu Card</a></li>
+            <li><a href="reservation.html"><i class="fa-solid fa-chevron-right"></i> Book a Table</a></li>
+            <li><a href="reviews.html"><i class="fa-solid fa-chevron-right"></i> Reviews</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Opening Hours</h4>
+          <ul class="footer-links" style="color:var(--text-secondary); font-size:0.88rem;">
+            <li style="margin-bottom:12px;"><strong style="color:var(--text-primary);">Monday – Friday:</strong><br>11:00 AM – 11:00 PM</li>
+            <li><strong style="color:var(--text-primary);">Saturday – Sunday:</strong><br>11:00 AM – 11:30 PM</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item" style="display:flex; gap:var(--space-sm); margin-bottom:var(--space-md); align-items:flex-start;">
+            <i class="fa-solid fa-location-dot" style="color:var(--gold); margin-top:3px; flex-shrink:0;"></i>
+            <span style="font-size:0.88rem; color:var(--text-secondary);">Near Highway (NH-565), Near Govt. Hospital, Pamuru, AP – 523108</span>
+          </div>
+          <div class="footer-contact-item" style="display:flex; gap:var(--space-sm); align-items:flex-start;">
+            <i class="fa-solid fa-phone" style="color:var(--gold); margin-top:3px; flex-shrink:0;"></i>
+            <div style="font-size:0.88rem;">
+              <div style="color:var(--text-secondary); margin-bottom:4px; font-size: 0.8rem;">Managed by:</div>
+              <a href="tel:6301042993" style="color:var(--gold); display:block; font-weight:600; margin-bottom:2px;">Jamakala Obulesh: 63010 42993</a>
+              <a href="tel:9912281479" style="color:var(--text-secondary); display:block; margin-bottom:2px;">Varukute Hanumanthu: 99122 81479</a>
+              <a href="tel:9666250268" style="color:var(--text-secondary); display:block;">Pula Madhava: 96662 50268</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ADHIRATHA Family Restaurant. All Rights Reserved. Made with <i class="fa-solid fa-heart" style="color:#e74c3c;"></i> in Andhra Pradesh.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/checkout.js"></script>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center;">
+    <div class="modal-content" style="background:var(--bg-card); padding:30px; border-radius:var(--radius-lg); text-align:center; width:90%; max-width:400px; border:1px solid var(--border-gold);">
+      <div style="font-size:3rem; color:var(--success); margin-bottom:15px;"><i class="fa-solid fa-circle-check"></i></div>
+      <h2 style="font-family:var(--font-heading); color:var(--gold); margin-bottom:10px;">Order Placed!</h2>
+      <p style="color:var(--text-secondary); margin-bottom:15px; font-size: 0.95rem;">Thank you for ordering from ADHIRATHA FAMILY RESTAURANT (AC). Your order has been placed successfully. Our team will contact you shortly.</p>
+      <div style="background:var(--bg-tertiary); padding:15px; border-radius:var(--radius-md); margin-bottom:20px; text-align:left;">
+        <p style="font-size:0.9rem; margin-bottom:5px;"><strong>Order ID:</strong> <span id="success-order-id" style="color:var(--gold);"></span></p>
+        <p style="font-size:0.9rem;"><strong>Date & Time:</strong> <span id="success-order-time" style="color:var(--text-primary);"></span></p>
+      </div>
+      <a href="index.html" class="btn btn-gold btn-block" onclick="CartStore.clearCart()">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
