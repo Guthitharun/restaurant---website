@@ -128,6 +128,48 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+
+/* --------------------------------------------------------------------------
+   OFFER BAR — Scrolling Announcement Ticker
+   -------------------------------------------------------------------------- */
+
+.offer-bar {
+  background: linear-gradient(90deg, #1a1a00, #2a1f00, #1a1a00);
+  border-bottom: 1px solid var(--gold-border);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  position: relative;
+  z-index: 200;
+}
+
+.offer-bar-content {
+  display: inline-flex;
+  animation: ticker-scroll 30s linear infinite;
+  gap: 0;
+}
+
+.offer-bar-item {
+  color: var(--gold-light);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0 60px;
+  text-transform: uppercase;
+  border-right: 1px solid var(--gold-border);
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.offer-bar:hover .offer-bar-content {
+  animation-play-state: paused;
+}
+
   min-height: 100vh;
 }
 
