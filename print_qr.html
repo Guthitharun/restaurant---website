@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printable QR Code - ADHIRATHA Family Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .print-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 400px;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      border: 4px solid #1a1a00;
+      position: relative;
+      overflow: hidden;
+    }
+    .print-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background: linear-gradient(90deg, #d4a843, #f5c518, #d4a843);
+    }
+    .brand-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #1a1a00;
+      margin-bottom: 5px;
+    }
+    .brand-sub {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #d4a843;
+      margin: 0 0 15px;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    .qr-container {
+      background: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      display: inline-block;
+      margin-bottom: 25px;
+      border: 2px dashed #d4a843;
+    }
+    .qr-container img {
+      width: 250px;
+      height: 250px;
+      display: block;
+    }
+    .footer-text {
+      font-size: 14px;
+      color: #888;
+      font-weight: 600;
+    }
+    .print-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1a1a00;
+      color: #d4a843;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+    .print-btn:hover {
+      background: #d4a843;
+      color: #1a1a00;
+    }
+    
+    /* Print Styles */
+    @media print {
+      body {
+        background: #fff;
+        align-items: flex-start;
+        padding-top: 50px;
+      }
+      .print-card {
+        box-shadow: none;
+        max-width: none;
+        width: 10cm; /* perfect for table standee */
+        margin: 0 auto;
+      }
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-card">
+    <div class="brand-logo">ADHIRATHA</div>
+    <div class="brand-sub">Family Restaurant • A/C</div>
+    
+    <h1 class="title">How was your food?</h1>
+    <p class="subtitle">Scan this QR code to rate us and leave a review. We'd love to hear from you!</p>
+    
+    <div class="qr-container">
+      <img src="images/review_qr.png" alt="Scan to Review QR Code">
+    </div>
+    
+    <div class="footer-text">
+      Point your phone camera here 📸
+    </div>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">
+    🖨️ Print for Tables
+  </button>
+
+</body>
+</html>
