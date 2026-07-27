@@ -59,7 +59,7 @@ function renderCart() {
 
     html += `
       <div class="cart-item animate-fade-up" data-item-id="${item.id}">
-        <img src="${getItemImage(item)}" alt="${item.name}" class="cart-item-img">
+        <img src="${getItemImage(item)}" alt="${item.name}" class="cart-item-img" onerror="this.onerror=null; this.src=getFoodPlaceholder('${item.name.replace(/'/g, "\\'")}', '🍽️');">
         <div class="cart-item-details">
           <h3 class="cart-item-name">${item.name}</h3>
           <span class="veg-dot ${item.isVeg ? 'veg' : 'nonveg'}"></span>

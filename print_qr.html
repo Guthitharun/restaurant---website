@@ -3,145 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Printable QR Code - ADHIRATHA Family Restaurant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <title>Print QR Code — ADHIRATHA FAMILY RESTAURANT (AC)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Outfit:wght@400;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
+      background: #0a0a0a;
+      color: #f5f5f5;
       font-family: 'Outfit', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .qr-print-card {
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(212,168,67,0.4);
+      border-radius: 24px;
+      padding: 50px 60px;
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(212,168,67,0.1);
+      backdrop-filter: blur(16px);
+    }
+
+    .restaurant-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #d4a843, #f5c518);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .restaurant-sub {
+      color: #888;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 32px;
+    }
+
+    .qr-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      display: inline-block;
+      box-shadow: 0 8px 30px rgba(212,168,67,0.3);
+      margin-bottom: 28px;
+    }
+
+    #qr-output { display: block; }
+
+    .qr-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #d4a843;
+      margin-bottom: 10px;
+    }
+
+    .qr-desc {
+      color: #aaa;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .stars {
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      gap: 6px;
+      margin-bottom: 24px;
     }
-    .print-card {
-      background: #ffffff;
-      width: 100%;
-      max-width: 400px;
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-      border: 4px solid #1a1a00;
-      position: relative;
-      overflow: hidden;
+
+    .stars i {
+      color: #d4a843;
+      font-size: 1.4rem;
     }
-    .print-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 12px;
-      background: linear-gradient(90deg, #d4a843, #f5c518, #d4a843);
-    }
-    .brand-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: #1a1a00;
-      margin-bottom: 5px;
-    }
-    .brand-sub {
-      font-size: 12px;
+
+    .url-label {
+      font-size: 0.75rem;
       color: #666;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
+      font-family: monospace;
+      word-break: break-all;
     }
-    .title {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: #d4a843;
-      margin: 0 0 15px;
-    }
-    .subtitle {
-      font-size: 16px;
-      color: #444;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-    .qr-container {
-      background: #fff;
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      display: inline-block;
-      margin-bottom: 25px;
-      border: 2px dashed #d4a843;
-    }
-    .qr-container img {
-      width: 250px;
-      height: 250px;
-      display: block;
-    }
-    .footer-text {
-      font-size: 14px;
-      color: #888;
-      font-weight: 600;
-    }
+
     .print-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #1a1a00;
-      color: #d4a843;
+      background: linear-gradient(135deg, #d4a843, #f5c518);
+      color: #000;
       border: none;
-      padding: 15px 25px;
-      border-radius: 30px;
-      font-size: 16px;
+      padding: 14px 40px;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 1px;
+      margin-right: 12px;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212,168,67,0.4);
+    }
+
+    .back-btn {
+      background: transparent;
+      color: #d4a843;
+      border: 1px solid rgba(212,168,67,0.4);
+      padding: 14px 30px;
+      border-radius: 100px;
+      font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
       font-family: 'Outfit', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
     }
-    .print-btn:hover {
-      background: #d4a843;
-      color: #1a1a00;
+
+    .back-btn:hover {
+      background: rgba(212,168,67,0.1);
     }
-    
-    /* Print Styles */
+
     @media print {
-      body {
-        background: #fff;
-        align-items: flex-start;
-        padding-top: 50px;
-      }
-      .print-card {
-        box-shadow: none;
-        max-width: none;
-        width: 10cm; /* perfect for table standee */
-        margin: 0 auto;
-      }
-      .print-btn {
-        display: none;
-      }
+      body { background: white; color: black; padding: 0; }
+      .qr-print-card { border: 2px solid #d4a843; box-shadow: none; background: white; }
+      .restaurant-name { -webkit-text-fill-color: #d4a843; }
+      .print-btn, .back-btn { display: none; }
+      .qr-desc, .qr-title, .stars { color: #333; }
     }
   </style>
 </head>
 <body>
 
-  <div class="print-card">
-    <div class="brand-logo">ADHIRATHA</div>
-    <div class="brand-sub">Family Restaurant • A/C</div>
-    
-    <h1 class="title">How was your food?</h1>
-    <p class="subtitle">Scan this QR code to rate us and leave a review. We'd love to hear from you!</p>
-    
-    <div class="qr-container">
-      <img src="images/review_qr.png" alt="Scan to Review QR Code">
+  <div class="qr-print-card">
+    <div class="restaurant-name">ADHIRATHA</div>
+    <div class="restaurant-sub">Family Restaurant (AC) · Pamuru, AP</div>
+
+    <div class="qr-box">
+      <div id="qr-output"></div>
     </div>
-    
-    <div class="footer-text">
-      Point your phone camera here 📸
+
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
     </div>
+
+    <div class="qr-title">Rate Our Food!</div>
+    <div class="qr-desc">
+      Scan this QR code with your phone camera to visit our review page.<br>
+      Rate each dish from 1–5 stars and share your experience!
+    </div>
+
+    <div class="url-label" id="qr-url-label">Loading URL...</div>
+
+    <button class="print-btn" onclick="window.print()">
+      <i class="fa-solid fa-print"></i> Print QR Code
+    </button>
+    <a href="index.html" class="back-btn">← Back to Home</a>
   </div>
 
-  <button class="print-btn" onclick="window.print()">
-    🖨️ Print for Tables
-  </button>
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    const reviewURL = window.location.origin +
+      window.location.pathname.replace('print_qr.html', '') + 'reviews.html';
 
+    document.getElementById('qr-url-label').textContent = reviewURL;
+
+    new QRCode(document.getElementById('qr-output'), {
+      text: reviewURL,
+      width: 220,
+      height: 220,
+      colorDark: '#0a0a0a',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
 </body>
 </html>

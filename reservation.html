@@ -65,7 +65,7 @@
         
         <!-- Left Column: Form booking -->
         <div id="reservation-form-wrapper">
-          <form id="reservation-form" style="background:var(--bg-card); border:1px solid var(--border-color); padding:30px; border-radius:var(--radius-xl);">
+          <form id="reservation-form" style="background:rgba(255,255,255,0.04); border:1px solid rgba(212,168,67,0.3); padding:30px; border-radius:var(--radius-xl); backdrop-filter:blur(16px); box-shadow:0 10px 40px rgba(0,0,0,0.4);">
             <h3 class="mb-4" style="font-family:var(--font-heading); color:var(--gold);">Booking Request</h3>
             
             <div class="form-row">
@@ -80,14 +80,14 @@
             </div>
 
             <div class="form-group">
-              <label for="res-email" class="form-label">Email / Gmail (Optional)</label>
+              <label for="res-email" class="form-label">Email (Optional)</label>
               <input type="email" id="res-email" class="form-input" placeholder="Enter your email address">
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="res-members" class="form-label">Number of Guests <span class="required">*</span></label>
-                <select id="res-members" class="form-select">
+                <select id="res-members" class="form-select" style="background:rgba(0,0,0,0.5); color:#fff; cursor:pointer;">
                   <option value="2">2 Persons</option>
                   <option value="4" selected>4 Persons</option>
                   <option value="6">6 Persons</option>
@@ -103,7 +103,7 @@
 
             <div class="form-group">
               <label for="res-time" class="form-label">Preferred Time Slot <span class="required">*</span></label>
-              <select id="res-time" class="form-select">
+              <select id="res-time" class="form-select" style="background:rgba(0,0,0,0.5); color:#fff; cursor:pointer;">
                 <!-- Lunch slots -->
                 <option value="11:30 AM">11:30 AM (Early Lunch)</option>
                 <option value="12:30 PM">12:30 PM</option>
@@ -119,10 +119,10 @@
 
             <div class="form-group">
               <label for="res-requests" class="form-label">Special Requests (Optional)</label>
-              <textarea id="res-requests" class="form-textarea" placeholder="e.g. Need high chair for kids, AC Cabin preference, birthday celebration set up request..."></textarea>
+              <textarea id="res-requests" class="form-textarea" placeholder="e.g. Need high chair for kids, AC Cabin preference..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-gold btn-block btn-lg">
+            <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top:10px;">
               <i class="fa-solid fa-calendar-check"></i> Book Table Instantly
             </button>
           </form>
@@ -131,37 +131,37 @@
         <!-- Right Column: Info & past reservations check -->
         <div>
           <!-- Restaurant hours & reservation policies -->
-          <div class="reservation-info mb-4">
+          <div class="reservation-info mb-4" style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(10px);">
             <h3 style="font-family:var(--font-heading); color:var(--gold); margin-bottom:20px;">Dining Information</h3>
             
             <div class="reservation-info-item">
               <div class="reservation-info-icon"><i class="fa-solid fa-clock"></i></div>
               <div>
-                <h4 style="font-family:var(--font-accent);">Opening Hours</h4>
-                <p class="text-sm">Daily: 11:00 AM - 11:00 PM</p>
+                <h4 style="font-family:var(--font-accent); color:#fff;">Opening Hours</h4>
+                <p class="text-sm" style="color:var(--text-secondary);">Daily: 11:00 AM - 11:00 PM</p>
               </div>
             </div>
 
             <div class="reservation-info-item">
               <div class="reservation-info-icon"><i class="fa-solid fa-snowflake"></i></div>
               <div>
-                <h4 style="font-family:var(--font-accent);">Fully Air Conditioned</h4>
-                <p class="text-sm">Separate family dining chambers & private tables available.</p>
+                <h4 style="font-family:var(--font-accent); color:#fff;">Fully Air Conditioned</h4>
+                <p class="text-sm" style="color:var(--text-secondary);">Separate family dining chambers & private tables available.</p>
               </div>
             </div>
 
             <div class="reservation-info-item">
               <div class="reservation-info-icon"><i class="fa-solid fa-utensils"></i></div>
               <div>
-                <h4 style="font-family:var(--font-accent);">Large Gathering Events</h4>
-                <p class="text-sm">We accommodate catering functions up to 100+ guest packages.</p>
+                <h4 style="font-family:var(--font-accent); color:#fff;">Large Gathering Events</h4>
+                <p class="text-sm" style="color:var(--text-secondary);">We accommodate catering functions up to 100+ guest packages.</p>
               </div>
             </div>
           </div>
 
           <!-- Past bookings display -->
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-xl); padding:25px;">
-            <h3 style="font-family:var(--font-heading); font-size:1.15rem; margin-bottom:15px;"><i class="fa-solid fa-clock-rotate-left text-gold"></i> Your Recent Bookings</h3>
+          <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-xl); padding:25px; backdrop-filter:blur(10px);">
+            <h3 style="font-family:var(--font-heading); font-size:1.15rem; margin-bottom:15px; color:#fff;"><i class="fa-solid fa-clock-rotate-left text-gold"></i> Your Recent Bookings</h3>
             <div id="past-bookings-list">
               <!-- Dynamically populated by reservation.js -->
             </div>

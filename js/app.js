@@ -581,8 +581,8 @@ function renderStars(rating) {
 
 /* Get image source with fallback */
 function getItemImage(item) {
-  // Always use placeholder image without external URLs
-  const cat = CATEGORIES.find(c => c.id === item.category);
+  if (item && item.image) return item.image;
+  const cat = typeof CATEGORIES !== 'undefined' ? CATEGORIES.find(c => c.id === item.category) : null;
   return getFoodPlaceholder(item.name, cat ? cat.emoji : '🍽️');
 }
 

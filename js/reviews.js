@@ -63,42 +63,8 @@ function renderReviewsSummary() {
 /* --------------------------------------------------------------------------
    3. Render List of Customer Reviews
    -------------------------------------------------------------------------- */
-function renderReviewsList() {
-  const container = document.getElementById('reviews-list-container');
-  if (!container) return;
-
-  const reviews = ReviewStore.getAll();
-  
-  // Sort reviews by date descending (Newest first)
-  reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  if (reviews.length === 0) {
-    container.innerHTML = `<p class="text-muted text-center py-4">No reviews yet. Be the first to share your experience!</p>`;
-    return;
-  }
-
-  let html = '';
-  reviews.forEach(r => {
-    html += `
-      <div class="review-card animate-fade-up" style="margin-bottom:15px;">
-        <div class="review-header">
-          <div class="review-avatar">${r.avatar || r.name.substring(0, 2).toUpperCase()}</div>
-          <div style="flex:1;">
-            <h4 class="review-name">${r.name}</h4>
-            <span class="review-date">${formatDate(r.date)}</span>
-          </div>
-          <div class="review-stars">${renderStars(r.rating)}</div>
-        </div>
-        <p class="review-text">${r.comment}</p>
-      </div>
-    `;
-  });
-
-  container.innerHTML = html;
-}
-
 /* --------------------------------------------------------------------------
-   4. Setup Review Form Submit
+   4. Setup Review Form Submit & Interactive Elements
    -------------------------------------------------------------------------- */
 function setupReviewsForm() {
   const form = document.getElementById('reviews-form');
@@ -111,19 +77,72 @@ function setupReviewsForm() {
     if (nameInput) nameInput.value = currentUser.name;
   }
 
+  // Populate Dish Selector
+  const itemSelect = document.getElementById('review-item');
+  if (itemSelect && typeof window.MENU_DATA !== 'undefined') {
+    // Flatten menu items
+    const allItems = [];
+    window.MENU_DATA.forEach(cat => {
+      cat.items.forEach(item => allItems.push(item));
+    });
+    // Sort alphabetically
+    allItems.sort((a,b) => a.name.localeCompare(b.name));
+    
+    allItems.forEach(item => {
+      const opt = document.createElement('option');
+      opt.value = item.name;
+      opt.textContent = item.name;
+      itemSelect.appendChild(opt);
+    });
+  }
+
+  // Interactive Stars Logic
+  const starIcons = document.querySelectorAll('.interactive-stars i');
+  const ratingInput = document.getElementById('review-rating-val');
+
+  starIcons.forEach(star => {
+    star.addEventListener('mouseenter', function() {
+      const val = parseInt(this.getAttribute('data-val'));
+      starIcons.forEach(s => {
+        if (parseInt(s.getAttribute('data-val')) <= val) {
+          s.classList.add('hovered');
+        } else {
+          s.classList.remove('hovered');
+        }
+      });
+    });
+
+    star.addEventListener('mouseleave', function() {
+      starIcons.forEach(s => s.classList.remove('hovered'));
+    });
+
+    star.addEventListener('click', function() {
+      const val = parseInt(this.getAttribute('data-val'));
+      ratingInput.value = val;
+      starIcons.forEach(s => {
+        if (parseInt(s.getAttribute('data-val')) <= val) {
+          s.classList.add('selected');
+        } else {
+          s.classList.remove('selected');
+        }
+      });
+    });
+  });
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.getElementById('review-name').value.trim();
-    const ratingInput = document.querySelector('input[name="rating"]:checked');
     const comment = document.getElementById('review-comment').value.trim();
+    const ratingVal = ratingInput.value;
+    const dishName = itemSelect ? itemSelect.value : 'Overall Experience';
 
     if (name === '') {
       showToast('Please enter your name', 'error');
       return;
     }
 
-    if (!ratingInput) {
+    if (!ratingVal) {
       showToast('Please select a star rating', 'error');
       return;
     }
@@ -133,18 +152,21 @@ function setupReviewsForm() {
       return;
     }
 
-    const rating = parseInt(ratingInput.value);
+    const rating = parseInt(ratingVal);
 
     // Save to local storage reviews store
     ReviewStore.add({
       name,
       rating,
       comment,
+      dish: dishName,
       avatar: name.substring(0, 2).toUpperCase()
     });
 
     // Reset Form
     form.reset();
+    ratingInput.value = '';
+    starIcons.forEach(s => s.classList.remove('selected', 'hovered'));
     if (currentUser) {
       document.getElementById('review-name').value = currentUser.name;
     }
@@ -155,4 +177,42 @@ function setupReviewsForm() {
 
     showToast('Thank you for your valuable feedback!', 'success');
   });
+}
+
+// Override renderReviewsList to show dish name
+function renderReviewsList() {
+  const container = document.getElementById('reviews-list-container');
+  if (!container) return;
+
+  const reviews = ReviewStore.getAll();
+  reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  if (reviews.length === 0) {
+    container.innerHTML = `<p class="text-muted text-center py-4">No reviews yet. Be the first to share your experience!</p>`;
+    return;
+  }
+
+  let html = '';
+  reviews.forEach(r => {
+    const dishTag = r.dish && r.dish !== 'Overall Experience' 
+      ? `<span style="display:inline-block; background:rgba(212,168,67,0.1); border:1px solid rgba(212,168,67,0.3); color:var(--gold); padding:2px 8px; border-radius:100px; font-size:0.75rem; margin-top:4px;"><i class="fa-solid fa-utensils"></i> ${r.dish}</span>` 
+      : '';
+
+    html += `
+      <div class="review-card animate-fade-up" style="margin-bottom:15px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(10px);">
+        <div class="review-header">
+          <div class="review-avatar" style="background:var(--gold-gradient); color:#000;">${r.avatar || r.name.substring(0, 2).toUpperCase()}</div>
+          <div style="flex:1;">
+            <h4 class="review-name" style="color:#fff;">${r.name}</h4>
+            <span class="review-date">${formatDate(r.date)}</span>
+            <div style="margin-top:2px;">${dishTag}</div>
+          </div>
+          <div class="review-stars">${renderStars(r.rating)}</div>
+        </div>
+        <p class="review-text" style="color:var(--text-secondary); margin-top:12px;">${r.comment}</p>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
 }

@@ -83,7 +83,7 @@
 
         <!-- Submission Form Column -->
         <div>
-          <form id="reviews-form" style="background:var(--bg-card); border:1px solid var(--border-color); padding:30px; border-radius:var(--radius-xl);">
+          <form id="reviews-form" style="background:rgba(255,255,255,0.04); border:1px solid rgba(212,168,67,0.3); padding:30px; border-radius:var(--radius-xl); backdrop-filter:blur(16px); box-shadow:0 10px 40px rgba(0,0,0,0.4);">
             <h3 class="mb-4" style="font-family:var(--font-heading); color:var(--gold);">Share Your Review</h3>
             
             <div class="form-group">
@@ -91,24 +91,35 @@
               <input type="text" id="review-name" class="form-input" placeholder="Enter your display name" required>
             </div>
 
+            <!-- New: Dish Selector (Auto-populated from menu) -->
             <div class="form-group">
-              <label class="form-label">Your Overall Rating <span class="required">*</span></label>
-              <div class="star-rating-input">
-                <input type="radio" id="star5" name="rating" value="5"><label for="star5"><i class="fa-solid fa-star"></i></label>
-                <input type="radio" id="star4" name="rating" value="4"><label for="star4"><i class="fa-solid fa-star"></i></label>
-                <input type="radio" id="star3" name="rating" value="3"><label for="star3"><i class="fa-solid fa-star"></i></label>
-                <input type="radio" id="star2" name="rating" value="2"><label for="star2"><i class="fa-solid fa-star"></i></label>
-                <input type="radio" id="star1" name="rating" value="1"><label for="star1"><i class="fa-solid fa-star"></i></label>
+              <label for="review-item" class="form-label">Which dish did you try?</label>
+              <select id="review-item" class="form-input" style="background:rgba(0,0,0,0.5); color:#fff; cursor:pointer;">
+                <option value="Overall Experience">Overall Experience (No specific dish)</option>
+                <!-- Populated via JS -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Your Rating <span class="required">*</span></label>
+              <!-- Interactive stars -->
+              <div class="interactive-stars" id="review-interactive-stars">
+                <i class="fa-solid fa-star" data-val="1"></i>
+                <i class="fa-solid fa-star" data-val="2"></i>
+                <i class="fa-solid fa-star" data-val="3"></i>
+                <i class="fa-solid fa-star" data-val="4"></i>
+                <i class="fa-solid fa-star" data-val="5"></i>
               </div>
+              <input type="hidden" id="review-rating-val" value="" required>
             </div>
 
             <div class="form-group">
               <label for="review-comment" class="form-label">Review Comment <span class="required">*</span></label>
-              <textarea id="review-comment" class="form-textarea" placeholder="What did you like or dislike? (e.g. food quality, delivery speed, AC ambiance...)" required></textarea>
+              <textarea id="review-comment" class="form-textarea" placeholder="What did you like or dislike?" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-gold btn-block btn-lg">
-              Submit Review Feedback
+              <i class="fa-solid fa-paper-plane"></i> Submit Review
             </button>
           </form>
         </div>

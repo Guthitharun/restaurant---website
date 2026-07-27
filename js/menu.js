@@ -218,29 +218,43 @@ function renderMenuItems() {
 function renderGridItem(item) {
   const qty        = CartStore.getItemQty(item.id);
   const isVegClass = item.isVeg ? 'veg' : 'nonveg';
-  const badge      = item.isBestseller
-    ? '<span class="card-badge badge-bestseller">Bestseller</span>'
-    : (item.isPopular ? '<span class="card-badge badge-popular">Popular</span>' : '');
+  
+  // Premium badging
+  let badge = '';
+  if (item.isBestseller) {
+    badge = '<span class="badge-bestseller-pill" style="position:absolute; top:12px; right:12px; z-index:10;"><i class="fa-solid fa-crown"></i> Bestseller</span>';
+  } else if (item.isPopular) {
+    badge = '<span class="badge-chefs-pick" style="position:absolute; top:12px; right:12px; z-index:10;"><i class="fa-solid fa-fire"></i> Popular</span>';
+  }
 
   const actionBtn = qty > 0
-    ? `<div class="qty-control" data-item-id="${item.id}">
-         <button class="qty-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
-         <span class="qty-value">${qty}</span>
-         <button class="qty-btn plus-btn"><i class="fa-solid fa-plus"></i></button>
+    ? `<div class="qty-control" data-item-id="${item.id}" style="border:1px solid rgba(212,168,67,0.4); background:rgba(212,168,67,0.1); border-radius:8px;">
+         <button class="qty-btn minus-btn" style="color:var(--gold);"><i class="fa-solid fa-minus"></i></button>
+         <span class="qty-value" style="color:#fff;">${qty}</span>
+         <button class="qty-btn plus-btn" style="color:var(--gold);"><i class="fa-solid fa-plus"></i></button>
        </div>`
-    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}">
+    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; transition:all 0.3s; color:var(--gold); font-weight:600;">
          <i class="fa-solid fa-plus"></i> Add
        </button>`;
 
-  /* Category emoji for the no-image card */
+  /* Image or Emoji for the card */
   const cat   = CATEGORIES.find(c => c.id === item.category);
   const emoji = cat ? cat.emoji : '🍽️';
 
+  const safeName = item.name.replace(/'/g, "\\'");
+  const imageHTML = item.image 
+    ? `<img src="${item.image}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover;" loading="lazy" onerror="this.onerror=null; this.src=getFoodPlaceholder('${safeName}', '${emoji}');">`
+    : `<div class="card-emoji-display" style="font-size:4rem; filter:drop-shadow(0 10px 15px rgba(0,0,0,0.4));">${emoji}</div>`;
+
+  // Generate fake rating (4.5 to 4.9)
+  const fakeRating = (4.5 + Math.random() * 0.4).toFixed(1);
+  const fakeReviewsCount = Math.floor(Math.random() * 200) + 50;
+
   return `
-    <div class="food-card animate-scale" data-item-id="${item.id}">
-      <div class="food-card-img menu-card-no-img">
-        <div class="card-emoji-display">${emoji}</div>
-        ${badge}
+    <div class="food-card animate-scale" data-item-id="${item.id}" style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(10px); overflow:hidden; position:relative; border-radius:20px;">
+      ${badge}
+      <div class="food-card-img ${item.image ? '' : 'menu-card-no-img'}" style="background:linear-gradient(135deg, rgba(212,168,67,0.1), rgba(255,255,255,0.02)); border-bottom:1px solid rgba(255,255,255,0.05); padding:0;">
+        ${imageHTML}
         <div class="food-card-overlay">
           <div class="veg-indicator">
             <span class="veg-dot ${isVegClass}"></span>
@@ -248,14 +262,24 @@ function renderGridItem(item) {
           </div>
         </div>
       </div>
-      <div class="food-card-body">
-        <div class="food-card-header">
-          <h3 class="food-card-name">${item.name}</h3>
+      <div class="food-card-body" style="padding:20px;">
+        <div class="food-card-header" style="margin-bottom:8px;">
+          <h3 class="food-card-name" style="font-family:var(--font-heading); font-size:1.15rem; color:#fff;">${item.name}</h3>
           <span class="veg-dot ${isVegClass}"></span>
         </div>
-        <p class="food-card-desc">${item.description}</p>
-        <div class="food-card-bottom">
-          <span class="food-card-price">₹${item.price}</span>
+        
+        <div class="food-card-rating" style="margin-bottom:12px;">
+          <div class="stars-row">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <span class="rating-count" style="color:var(--gold); font-weight:600;">${fakeRating}</span>
+          <span class="rating-count">(${fakeReviewsCount})</span>
+        </div>
+
+        <p class="food-card-desc" style="color:var(--text-secondary); font-size:0.85rem; line-height:1.4; margin-bottom:16px;">${item.description}</p>
+        
+        <div class="food-card-bottom" style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.05); padding-top:16px;">
+          <span class="food-card-price" style="font-size:1.25rem; font-weight:700; color:var(--gold);">₹${item.price}</span>
           <div class="action-wrapper">${actionBtn}</div>
         </div>
       </div>
@@ -273,21 +297,26 @@ function renderListItem(item) {
     : (item.isPopular ? '<span class="card-badge badge-popular btn-sm" style="position:static;margin-right:8px;">Popular</span>' : '');
 
   const actionBtn = qty > 0
-    ? `<div class="qty-control" data-item-id="${item.id}">
-         <button class="qty-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
-         <span class="qty-value">${qty}</span>
-         <button class="qty-btn plus-btn"><i class="fa-solid fa-plus"></i></button>
+    ? `<div class="qty-control" data-item-id="${item.id}" style="border:1px solid rgba(212,168,67,0.4); background:rgba(212,168,67,0.1); border-radius:8px;">
+         <button class="qty-btn minus-btn" style="color:var(--gold);"><i class="fa-solid fa-minus"></i></button>
+         <span class="qty-value" style="color:#fff;">${qty}</span>
+         <button class="qty-btn plus-btn" style="color:var(--gold);"><i class="fa-solid fa-plus"></i></button>
        </div>`
-    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}">
-         <i class="fa-solid fa-plus"></i> Add to Order
+    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; transition:all 0.3s; color:var(--gold); font-weight:600;">
+         <i class="fa-solid fa-plus"></i> Add
        </button>`;
 
   const cat   = CATEGORIES.find(c => c.id === item.category);
   const emoji = cat ? cat.emoji : '🍽️';
+  const safeName = item.name.replace(/'/g, "\\'");
+
+  const imageBox = item.image 
+    ? `<div class="menu-list-img-box" style="width:100px; height:100px; border-radius:12px; overflow:hidden; flex-shrink:0;"><img src="${item.image}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src=getFoodPlaceholder('${safeName}', '${emoji}');"></div>`
+    : `<div class="menu-list-emoji-box">${emoji}</div>`;
 
   return `
     <div class="menu-list-item animate-fade-up" data-item-id="${item.id}">
-      <div class="menu-list-emoji-box">${emoji}</div>
+      ${imageBox}
       <div class="menu-list-details">
         <h3 class="menu-list-name">
           ${item.name}
