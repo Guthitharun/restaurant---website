@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f1105" />
+      <stop offset="50%" stop-color="#3d2209" />
+      <stop offset="100%" stop-color="#140a02" />
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4a843" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="clayPot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c05c28" />
+      <stop offset="50%" stop-color="#8a3709" />
+      <stop offset="100%" stop-color="#4d1b02" />
+    </linearGradient>
+    <linearGradient id="lassiCream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffdf0" />
+      <stop offset="60%" stop-color="#f7f2d4" />
+      <stop offset="100%" stop-color="#e8dba8" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="10" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" />
+  <circle cx="300" cy="200" r="180" fill="url(#goldGlow)" />
+
+  <ellipse cx="300" cy="355" rx="75" ry="18" fill="#000000" opacity="0.85" filter="blur(6px)" />
+
+  <!-- Traditional Matka Clay Pot Body -->
+  <path d="M 230 160 Q 190 240 230 330 Q 300 365 370 330 Q 410 240 370 160 Z" fill="url(#clayPot)" stroke="#e76f51" stroke-width="2" filter="url(#shadow)" />
+
+  <!-- Clay Rim -->
+  <ellipse cx="300" cy="160" rx="70" ry="20" fill="#a04000" stroke="#d35400" stroke-width="3" />
+
+  <!-- Creamy Sweet Lassi Surface -->
+  <ellipse cx="300" cy="160" rx="65" ry="17" fill="url(#lassiCream)" />
+
+  <!-- Thick Malai (Cream Layer) on top -->
+  <ellipse cx="295" cy="158" rx="45" ry="12" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.2))" />
+
+  <!-- Saffron Strands & Pistachios Garnishing -->
+  <path d="M 280 152 Q 290 156 300 150 M 310 158 Q 320 152 325 160 M 270 160 Q 280 162 275 165" stroke="#e67e22" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <circle cx="285" cy="155" r="3" fill="#27ae60" />
+  <circle cx="305" cy="160" r="3.5" fill="#27ae60" />
+  <circle cx="318" cy="152" r="3" fill="#d4a843" />
+  <circle cx="295" cy="162" r="2.5" fill="#c0392b" />
+  <circle cx="325" cy="158" r="3" fill="#27ae60" />
+
+  <!-- Earthen Matka Texture Lines -->
+  <path d="M 230 220 Q 300 240 370 220 M 220 260 Q 300 285 380 260 M 240 300 Q 300 320 360 300" stroke="rgba(0,0,0,0.3)" stroke-width="2" fill="none" />
+
+  <!-- Title Badge -->
+  <rect x="20" y="20" width="160" height="38" rx="8" fill="rgba(0,0,0,0.6)" stroke="rgba(212,168,67,0.4)" stroke-width="1" />
+  <text x="32" y="44" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#d4a843">🥛 SWEET LASSI</text>
+</svg>

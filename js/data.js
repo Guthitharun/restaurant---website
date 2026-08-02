@@ -93,7 +93,7 @@ const MENU_ITEMS = [
   { id: 21,  name: "BUTTER CHICKEN",        category: "non-veg-curry", price: 320, isVeg: false, isBestseller: true,  isPopular: true,  description: "Juicy chicken tandoori chunks cooked in rich creamy tomato butter sauce.", image: "images/butter_chicken.png" },
   { id: 22,  name: "CHICKEN MOGALAL",        category: "non-veg-curry", price: 300, isVeg: false, isBestseller: false, isPopular: true,  description: "Rich and creamy Mughlai-style chicken curry topped with egg drops.", image: "images/butter_chicken.png" },
   { id: 23,  name: "MUTTON CURRY",          category: "non-veg-curry", price: 350, isVeg: false, isBestseller: true,  isPopular: true,  description: "Tender local mutton cooked in home-style spicy gravy.", image: "images/butter_chicken.png" },
-  { id: 24,  name: "PRAWNS CURRY",          category: "non-veg-curry", price: 350, isVeg: false, isBestseller: false, isPopular: false, description: "Fresh prawns cooked in tangy and spicy coastal curry.", image: "images/fish.png" },
+  { id: 24,  name: "PRAWNS CURRY",          category: "non-veg-curry", price: 350, isVeg: false, isBestseller: false, isPopular: false, description: "Fresh prawns cooked in tangy and spicy coastal curry.", image: "images/prawns_curry.svg" },
   { id: 25,  name: "EGG CURRY",             category: "non-veg-curry", price: 150, isVeg: false, isBestseller: false, isPopular: true,  description: "Boiled eggs cooked in flavorful onion-tomato masala.", image: "images/egg_curry.png" },
   { id: 26,  name: "EGG KEEMA CURRY",       category: "non-veg-curry", price: 150, isVeg: false, isBestseller: false, isPopular: false, description: "Minced eggs cooked with green peas and dry spices.", image: "images/egg_curry.png" },
 
@@ -127,15 +127,15 @@ const MENU_ITEMS = [
   { id: 49,  name: "MALAI KOPTHA CURRY",    category: "veg-curry", price: 200, isVeg: true,  isBestseller: true,  isPopular: true,  description: "Crispy vegetable dumplings cooked in rich creamy spiced gravy.", image: "images/paneer_butter_masala.png" },
 
   // ==================== DESERTS & DRINKS ====================
-  { id: 50,  name: "AMUL ICE CREAM",        category: "drinks", price: 12,  isVeg: true,  isBestseller: false, isPopular: true,  description: "Rich premium scoop of Amul ice cream.", image: "images/hero-banner.jpg" },
-  { id: 51,  name: "THUMBS UP",             category: "drinks", price: 25,  isVeg: true,  isBestseller: false, isPopular: true,  description: "Chilled Thumbs Up soft drink bottle.", image: "images/hero-banner.jpg" },
-  { id: 52,  name: "GOLI SODA",             category: "drinks", price: 20,  isVeg: true,  isBestseller: false, isPopular: false, description: "Traditional sweet goli soda.", image: "images/hero-banner.jpg" },
-  { id: 53,  name: "RED BULL",              category: "drinks", price: 125, isVeg: true,  isBestseller: false, isPopular: true,  description: "Red Bull energy drink.", image: "images/hero-banner.jpg" },
-  { id: 54,  name: "BUDWEISER",             category: "drinks", price: 100, isVeg: true,  isBestseller: false, isPopular: false, description: "Budweiser non-alcoholic drink.", image: "images/hero-banner.jpg" },
-  { id: 55,  name: "MONSTER",               category: "drinks", price: 120, isVeg: true,  isBestseller: false, isPopular: false, description: "Monster energy drink can.", image: "images/hero-banner.jpg" },
-  { id: 56,  name: "WATER BOTTLE (SMALL)",  category: "drinks", price: 10,  isVeg: true,  isBestseller: false, isPopular: false, description: "Chilled mineral water bottle.", image: "images/hero-banner.jpg" },
-  { id: 57,  name: "WATER BOTTLE (BIG)",    category: "drinks", price: 20,  isVeg: true,  isBestseller: false, isPopular: false, description: "Chilled mineral water bottle (1L).", image: "images/hero-banner.jpg" },
-  { id: 58,  name: "LASSI",                 category: "drinks", price: 40,  isVeg: true,  isBestseller: true,  isPopular: true,  description: "Creamy traditional sweet lassi.", image: "images/hero-banner.jpg" },
+  { id: 50,  name: "AMUL ICE CREAM",        category: "drinks", price: 12,  isVeg: true,  isBestseller: false, isPopular: true,  description: "Rich premium scoop of Amul ice cream.", image: "images/amul_ice_cream.svg" },
+  { id: 51,  name: "THUMBS UP",             category: "drinks", price: 25,  isVeg: true,  isBestseller: false, isPopular: true,  description: "Chilled Thumbs Up soft drink bottle.", image: "images/thumbs_up.svg" },
+  { id: 52,  name: "GOLI SODA",             category: "drinks", price: 20,  isVeg: true,  isBestseller: false, isPopular: false, description: "Traditional sweet goli soda.", image: "images/goli_soda.svg" },
+  { id: 53,  name: "RED BULL",              category: "drinks", price: 125, isVeg: true,  isBestseller: false, isPopular: true,  description: "Red Bull energy drink.", image: "images/red_bull.svg" },
+  { id: 54,  name: "BUDWEISER",             category: "drinks", price: 100, isVeg: true,  isBestseller: false, isPopular: false, description: "Budweiser non-alcoholic drink.", image: "images/budweiser.svg" },
+  { id: 55,  name: "MONSTER",               category: "drinks", price: 120, isVeg: true,  isBestseller: false, isPopular: false, description: "Monster energy drink can.", image: "images/monster_energy.svg" },
+  { id: 56,  name: "WATER BOTTLE (SMALL)",  category: "drinks", price: 10,  isVeg: true,  isBestseller: false, isPopular: false, description: "Chilled mineral water bottle.", image: "images/water_bottle_small.svg" },
+  { id: 57,  name: "WATER BOTTLE (BIG)",    category: "drinks", price: 20,  isVeg: true,  isBestseller: false, isPopular: false, description: "Chilled mineral water bottle (1L).", image: "images/water_bottle_big.svg" },
+  { id: 58,  name: "LASSI",                 category: "drinks", price: 40,  isVeg: true,  isBestseller: true,  isPopular: true,  description: "Creamy traditional sweet lassi.", image: "images/lassi.svg" },
 
   // ==================== BIRYANI ITEMS ====================
   // Non-Veg Biryanis
@@ -146,7 +146,7 @@ const MENU_ITEMS = [
   { id: 63,  name: "MOGALAL BIRYANI",       category: "biryani", price: 320, isVeg: false, isBestseller: false, isPopular: false, description: "Rich royal Mughal-style aromatic biryani.", image: "images/biryani.png" },
   { id: 64,  name: "MUTTON DUM BIRYANI",    category: "biryani", price: 350, isVeg: false, isBestseller: true,  isPopular: true,  description: "Slow cooked tender mutton dum biryani.", image: "images/biryani.png" },
   { id: 65,  name: "MUTTON FRY PIECE BIRYANI",category: "biryani", price: 350, isVeg: false, isBestseller: false, isPopular: false, description: "Basmati rice served with spicy mutton fry pieces.", image: "images/biryani.png" },
-  { id: 66,  name: "PRAWN BIRYANI",         category: "biryani", price: 350, isVeg: false, isBestseller: false, isPopular: false, description: "Seafood biryani with sautéed prawns and spices.", image: "images/fish.png" },
+  { id: 66,  name: "PRAWN BIRYANI",         category: "biryani", price: 350, isVeg: false, isBestseller: false, isPopular: false, description: "Seafood biryani with sautéed prawns and spices.", image: "images/prawn_biryani.svg" },
   { id: 67,  name: "EGG BIRYANI",           category: "biryani", price: 190, isVeg: false, isBestseller: false, isPopular: true,  description: "Spiced biryani rice served with boiled eggs.", image: "images/egg_curry.png" },
 
   // Veg Biryanis
@@ -190,13 +190,13 @@ const MENU_ITEMS = [
   { id: 97,  name: "Mutton Fry",             category: "fry-items", price: 350, isVeg: false, isBestseller: true,  isPopular: true,  description: "Tender fried mutton pieces tossed in local spices.", image: "images/chicken65.jpg" },
 
   // ==================== FISH ====================
-  { id: 98,  name: "Appolo Fish",            category: "fish", price: 400, isVeg: false, isBestseller: true,  isPopular: true,  description: "Batter-fried fish fillets tossed in rich spicy yoghurt sauce.", image: "images/fish.png" },
-  { id: 99,  name: "Fish Fry (3 Pcs)",       category: "fish", price: 200, isVeg: false, isBestseller: false, isPopular: true,  description: "Crispy tawa fried fish pieces with masala.", image: "images/fish.png" },
-  { id: 100, name: "SPL Fish Fry",           category: "fish", price: 220, isVeg: false, isBestseller: false, isPopular: false, description: "Special tawa fried fish fillet.", image: "images/fish.png" },
+  { id: 98,  name: "Appolo Fish",            category: "fish", price: 400, isVeg: false, isBestseller: true,  isPopular: true,  description: "Batter-fried fish fillets tossed in rich spicy yoghurt sauce.", image: "images/apollo_fish.svg" },
+  { id: 99,  name: "Fish Fry (3 Pcs)",       category: "fish", price: 200, isVeg: false, isBestseller: false, isPopular: true,  description: "Crispy tawa fried fish pieces with masala.", image: "images/fish_fry.svg" },
+  { id: 100, name: "SPL Fish Fry",           category: "fish", price: 220, isVeg: false, isBestseller: false, isPopular: false, description: "Special tawa fried fish fillet.", image: "images/spl_fish_fry.svg" },
 
   // ==================== PRAWNS ====================
-  { id: 101, name: "Loose Prawn",            category: "prawns", price: 350, isVeg: false, isBestseller: true,  isPopular: true,  description: "Batter fried prawns tossed with onion, garlic, and chilies.", image: "images/fish.png" },
-  { id: 102, name: "Prawn Fry",              category: "prawns", price: 350, isVeg: false, isBestseller: false, isPopular: false, description: "Spicy fried coastal prawns dry.", image: "images/fish.png" },
+  { id: 101, name: "Loose Prawn",            category: "prawns", price: 350, isVeg: false, isBestseller: true,  isPopular: true,  description: "Batter fried prawns tossed with onion, garlic, and chilies.", image: "images/loose_prawn.svg" },
+  { id: 102, name: "Prawn Fry",              category: "prawns", price: 350, isVeg: false, isBestseller: false, isPopular: false, description: "Spicy fried coastal prawns dry.", image: "images/prawn_fry.svg" },
 
   // ==================== EGG ====================
   { id: 103, name: "Egg Chilli",             category: "egg", price: 150, isVeg: false, isBestseller: false, isPopular: false, description: "Fried eggs tossed in sweet and hot chili sauce.", image: "images/egg_curry.png" },

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140702" />
+      <stop offset="50%" stop-color="#2c0e04" />
+      <stop offset="100%" stop-color="#0a0301" />
+    </linearGradient>
+    <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c0392b" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="prawnFry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22" />
+      <stop offset="50%" stop-color="#ba4a00" />
+      <stop offset="100%" stop-color="#6e2c00" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="10" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" />
+  <circle cx="300" cy="200" r="180" fill="url(#redGlow)" />
+
+  <!-- Black Cast Iron Pan -->
+  <ellipse cx="300" cy="245" rx="195" ry="110" fill="#212f3d" stroke="#566573" stroke-width="3" filter="url(#shadow)" />
+  <ellipse cx="300" cy="245" rx="175" ry="90" fill="#17202a" />
+
+  <!-- Spicy Roasted Coastal Prawn Fry Platter -->
+  <g filter="url(#shadow)">
+    <!-- Prawn 1 -->
+    <path d="M 190 220 Q 220 180 250 210 Q 240 250 195 240 Z" fill="url(#prawnFry)" stroke="#e74c3c" stroke-width="2" />
+    <!-- Prawn 2 -->
+    <path d="M 250 200 Q 290 170 320 205 Q 300 245 255 235 Z" fill="url(#prawnFry)" stroke="#e74c3c" stroke-width="2" />
+    <!-- Prawn 3 -->
+    <path d="M 320 210 Q 360 180 390 220 Q 370 255 325 245 Z" fill="url(#prawnFry)" stroke="#e74c3c" stroke-width="2" />
+    <!-- Prawn 4 -->
+    <path d="M 220 240 Q 260 220 290 255 Q 260 280 225 265 Z" fill="url(#prawnFry)" stroke="#e74c3c" stroke-width="2" />
+    <!-- Prawn 5 -->
+    <path d="M 290 245 Q 340 230 370 260 Q 340 285 295 275 Z" fill="url(#prawnFry)" stroke="#e74c3c" stroke-width="2" />
+  </g>
+
+  <!-- Roasted Masala, Curry Leaves & Lemon Wedge -->
+  <path d="M 180 240 Q 280 270 380 245" stroke="#2ecc71" stroke-width="4" stroke-linecap="round" fill="none" />
+  <circle cx="420" cy="255" r="20" fill="#f1c40f" stroke="#f39c12" stroke-width="2.5" />
+
+  <!-- Title Badge -->
+  <rect x="20" y="20" width="170" height="38" rx="8" fill="rgba(0,0,0,0.6)" stroke="rgba(212,168,67,0.4)" stroke-width="1" />
+  <text x="32" y="44" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#d4a843">🦐 PRAWN FRY</text>
+</svg>

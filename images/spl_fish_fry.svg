@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190a05" />
+      <stop offset="50%" stop-color="#331408" />
+      <stop offset="100%" stop-color="#0e0401" />
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4a843" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="wholeFish" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22" />
+      <stop offset="40%" stop-color="#ba4a00" />
+      <stop offset="80%" stop-color="#7e2804" />
+      <stop offset="100%" stop-color="#4a1501" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="12" flood-color="#000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" />
+  <circle cx="300" cy="200" r="180" fill="url(#goldGlow)" />
+
+  <!-- Wooden Serving Board Platter -->
+  <rect x="90" y="140" width="420" height="200" rx="30" fill="#42220f" stroke="#783e1d" stroke-width="4" filter="url(#shadow)" />
+  <rect x="105" y="155" width="390" height="170" rx="20" fill="#2d170a" />
+
+  <!-- Special Whole Marinated Tawa Fried Fish -->
+  <g filter="url(#shadow)">
+    <!-- Fish Body Shape (Pomfret/Kingfish style) -->
+    <path d="M 130 240 Q 200 160 380 210 Q 460 240 470 240 Q 460 250 380 270 Q 200 320 130 240 Z" fill="url(#wholeFish)" stroke="#ff4d4d" stroke-width="2" />
+    <!-- Tail Fin -->
+    <path d="M 130 240 L 95 210 L 110 240 L 95 270 Z" fill="#7e2804" stroke="#e74c3c" stroke-width="1.5" />
+    <!-- Fish Eye -->
+    <circle cx="430" cy="230" r="6" fill="#ffffff" />
+    <circle cx="431" cy="230" r="3" fill="#000000" />
+    <!-- Gill line -->
+    <path d="M 400 215 Q 390 240 400 265" stroke="#4a1501" stroke-width="3" fill="none" />
+    <!-- Deep Masala Cuts across fish body -->
+    <line x1="200" y1="200" x2="220" y2="280" stroke="#2c0c00" stroke-width="4" />
+    <line x1="240" y1="190" x2="260" y2="285" stroke="#2c0c00" stroke-width="4" />
+    <line x1="280" y1="190" x2="300" y2="280" stroke="#2c0c00" stroke-width="4" />
+    <line x1="320" y1="195" x2="340" y2="275" stroke="#2c0c00" stroke-width="4" />
+    <line x1="360" y1="205" x2="375" y2="265" stroke="#2c0c00" stroke-width="4" />
+  </g>
+
+  <!-- Roasted Masala Dressing, Coriander & Lemon Slices -->
+  <circle cx="450" cy="280" r="22" fill="#f1c40f" stroke="#f39c12" stroke-width="3" />
+  <circle cx="450" cy="280" r="17" fill="#f4d03f" />
+
+  <path d="M 170 235 Q 260 215 350 240" stroke="#2ecc71" stroke-width="5" stroke-linecap="round" fill="none" />
+  <circle cx="210" cy="230" r="3" fill="#ffffff" />
+  <circle cx="270" cy="225" r="4" fill="#ffffff" />
+  <circle cx="330" cy="235" r="3.5" fill="#ffffff" />
+
+  <!-- Title Badge -->
+  <rect x="20" y="20" width="200" height="38" rx="8" fill="rgba(0,0,0,0.6)" stroke="rgba(212,168,67,0.4)" stroke-width="1" />
+  <text x="32" y="44" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#d4a843">👑 SPL FISH FRY</text>
+</svg>

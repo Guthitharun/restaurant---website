@@ -233,7 +233,7 @@ function renderGridItem(item) {
          <span class="qty-value" style="color:#fff;">${qty}</span>
          <button class="qty-btn plus-btn" style="color:var(--gold);"><i class="fa-solid fa-plus"></i></button>
        </div>`
-    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; transition:all 0.3s; color:var(--gold); font-weight:600;">
+    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}" style="background:linear-gradient(135deg, #d4a843 0%, #f5c518 100%); color:#000; border:none; border-radius:20px; padding:8px 18px; font-weight:700; font-family:var(--font-accent); box-shadow:0 4px 15px rgba(212,168,67,0.4); cursor:pointer; transition:all 0.3s ease;">
          <i class="fa-solid fa-plus"></i> Add
        </button>`;
 
@@ -302,7 +302,7 @@ function renderListItem(item) {
          <span class="qty-value" style="color:#fff;">${qty}</span>
          <button class="qty-btn plus-btn" style="color:var(--gold);"><i class="fa-solid fa-plus"></i></button>
        </div>`
-    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; transition:all 0.3s; color:var(--gold); font-weight:600;">
+    : `<button class="add-to-cart-btn btn-add" data-item-id="${item.id}" style="background:linear-gradient(135deg, #d4a843 0%, #f5c518 100%); color:#000; border:none; border-radius:20px; padding:8px 18px; font-weight:700; font-family:var(--font-accent); box-shadow:0 4px 15px rgba(212,168,67,0.4); cursor:pointer; transition:all 0.3s ease;">
          <i class="fa-solid fa-plus"></i> Add
        </button>`;
 

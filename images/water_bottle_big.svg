@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041221" />
+      <stop offset="50%" stop-color="#0a2a4a" />
+      <stop offset="100%" stop-color="#020912" />
+    </linearGradient>
+    <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3498db" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="waterBottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.75)" />
+      <stop offset="25%" stop-color="rgba(52,152,219,0.35)" />
+      <stop offset="75%" stop-color="rgba(41,128,185,0.45)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.55)" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="10" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" />
+  <circle cx="300" cy="200" r="180" fill="url(#blueGlow)" />
+
+  <ellipse cx="300" cy="365" rx="55" ry="14" fill="#000000" opacity="0.85" filter="blur(6px)" />
+
+  <!-- Bottle Body (Big 1 Litre) -->
+  <path d="M 270 70 L 330 70 L 330 110 C 330 145 350 165 350 200 L 350 345 Q 350 360 325 360 L 275 360 Q 250 360 250 345 L 250 200 C 250 165 270 145 270 110 Z" fill="url(#waterBottle)" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" filter="url(#shadow)" />
+
+  <!-- Blue Cap -->
+  <rect x="268" y="52" width="64" height="20" rx="4" fill="#1b4f72" stroke="#3498db" stroke-width="1.5" />
+
+  <!-- Label (1 Litre Premium Mineral Water) -->
+  <path d="M 251 180 L 349 180 L 349 260 L 251 260 Z" fill="#154360" stroke="#3498db" stroke-width="1.5" />
+  <text x="300" y="215" font-family="'Arial Black', sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">PURE WATER</text>
+  <text x="300" y="235" font-family="'Arial', sans-serif" font-size="12" font-weight="700" fill="#5ded34" text-anchor="middle">1 LITRE BOTTLE</text>
+
+  <!-- Water Drops -->
+  <circle cx="265" cy="150" r="4" fill="#ffffff" opacity="0.9" />
+  <circle cx="338" cy="280" r="4.5" fill="#ffffff" opacity="0.9" />
+  <circle cx="260" cy="310" r="3.5" fill="#ffffff" opacity="0.9" />
+
+  <!-- Title Badge -->
+  <rect x="20" y="20" width="200" height="38" rx="8" fill="rgba(0,0,0,0.6)" stroke="rgba(212,168,67,0.4)" stroke-width="1" />
+  <text x="32" y="44" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#d4a843">💧 WATER BOTTLE (1L)</text>
+</svg>

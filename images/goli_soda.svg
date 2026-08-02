@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051c14" />
+      <stop offset="50%" stop-color="#0a3828" />
+      <stop offset="100%" stop-color="#03140e" />
+    </linearGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2ecc71" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="coddBottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)" />
+      <stop offset="20%" stop-color="rgba(46,204,113,0.3)" />
+      <stop offset="80%" stop-color="rgba(39,174,96,0.4)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.4)" />
+    </linearGradient>
+    <radialGradient id="marble" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#a3e4d7" />
+      <stop offset="100%" stop-color="#117864" />
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="10" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" />
+  <circle cx="300" cy="200" r="180" fill="url(#greenGlow)" />
+
+  <!-- Lemon Slice on Side -->
+  <circle cx="390" cy="280" r="40" fill="#f1c40f" stroke="#f39c12" stroke-width="4" filter="url(#shadow)" />
+  <circle cx="390" cy="280" r="32" fill="#f4d03f" />
+  <path d="M 390 280 L 390 248 M 390 280 L 422 280 M 390 280 L 390 312 M 390 280 L 358 280 M 390 280 L 413 257 M 390 280 L 367 303" stroke="#ffffff" stroke-width="2" />
+
+  <!-- Bottle Shadow -->
+  <ellipse cx="300" cy="365" rx="50" ry="12" fill="#000000" opacity="0.9" filter="blur(6px)" />
+
+  <!-- Codd-Neck Bottle Body -->
+  <!-- Upper Neck with Marble Chamber pinched shape -->
+  <path d="M 275 80 L 325 80 L 325 110 C 310 120 310 140 325 150 L 325 190 Q 345 200 345 240 L 345 340 Q 345 355 325 355 L 275 355 Q 255 355 255 340 L 255 240 Q 255 200 275 190 L 275 150 C 290 140 290 120 275 110 Z" fill="url(#coddBottle)" stroke="rgba(255,255,255,0.4)" stroke-width="2" filter="url(#shadow)" />
+
+  <!-- Marble (Goli) trapped inside neck pinched chamber -->
+  <circle cx="300" cy="130" r="15" fill="url(#marble)" stroke="#ffffff" stroke-width="1.5" />
+  <circle cx="295" cy="125" r="4" fill="#ffffff" opacity="0.8" />
+
+  <!-- Rubber Washer Seal at Opening -->
+  <ellipse cx="300" cy="80" rx="25" ry="6" fill="#e74c3c" stroke="#922b21" stroke-width="1" />
+
+  <!-- Soda Bubbles Inside -->
+  <circle cx="280" cy="230" r="4" fill="rgba(255,255,255,0.8)" />
+  <circle cx="310" cy="250" r="5" fill="rgba(255,255,255,0.8)" />
+  <circle cx="290" cy="280" r="6" fill="rgba(255,255,255,0.9)" />
+  <circle cx="320" cy="300" r="4" fill="rgba(255,255,255,0.8)" />
+  <circle cx="270" cy="310" r="5" fill="rgba(255,255,255,0.8)" />
+
+  <!-- Condensation Drops -->
+  <circle cx="260" cy="220" r="3" fill="rgba(255,255,255,0.9)" />
+  <circle cx="340" cy="270" r="3.5" fill="rgba(255,255,255,0.9)" />
+
+  <!-- Glass Highlights -->
+  <path d="M 265 190 Q 262 250 262 330" stroke="rgba(255,255,255,0.7)" stroke-width="3" fill="none" stroke-linecap="round" />
+
+  <!-- Title Badge -->
+  <rect x="20" y="20" width="180" height="38" rx="8" fill="rgba(0,0,0,0.6)" stroke="rgba(212,168,67,0.4)" stroke-width="1" />
+  <text x="32" y="44" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#d4a843">🧪 GOLI SODA</text>
+</svg>

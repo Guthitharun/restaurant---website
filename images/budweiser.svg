@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140804" />
+      <stop offset="50%" stop-color="#2d1207" />
+      <stop offset="100%" stop-color="#0d0402" />
+    </linearGradient>
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e67e22" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="amberBottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.4)" />
+      <stop offset="20%" stop-color="rgba(120,50,10,0.95)" />
+      <stop offset="80%" stop-color="rgba(80,30,5,0.95)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.3)" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="10" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" />
+  <circle cx="300" cy="200" r="180" fill="url(#amberGlow)" />
+
+  <ellipse cx="300" cy="360" rx="50" ry="12" fill="#000000" opacity="0.9" filter="blur(6px)" />
+
+  <!-- Bottle Body -->
+  <path d="M 275 80 L 325 80 L 325 120 C 325 150 345 180 345 220 L 345 340 Q 345 355 325 355 L 275 355 Q 255 355 255 340 L 255 220 C 255 180 275 150 275 120 Z" fill="url(#amberBottle)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="url(#shadow)" />
+
+  <!-- Crown Cap (Crown Gold) -->
+  <rect x="272" y="68" width="56" height="14" rx="2" fill="#d4a843" stroke="#ffffff" stroke-width="1" />
+
+  <!-- Bowtie Red Label -->
+  <path d="M 260 210 L 340 200 L 325 240 L 340 280 L 260 270 L 275 240 Z" fill="#cc0000" stroke="#ffffff" stroke-width="1.5" />
+  <text x="300" y="245" font-family="'Georgia', serif" font-size="14" font-weight="bold" font-style="italic" fill="#ffffff" text-anchor="middle">Budweiser</text>
+  <text x="300" y="260" font-family="'Arial', sans-serif" font-size="8" fill="#d4a843" text-anchor="middle">NON-ALCOHOLIC</text>
+
+  <!-- Title Badge -->
+  <rect x="20" y="20" width="200" height="38" rx="8" fill="rgba(0,0,0,0.6)" stroke="rgba(212,168,67,0.4)" stroke-width="1" />
+  <text x="32" y="44" font-family="'Poppins', sans-serif" font-size="15" font-weight="700" fill="#d4a843">🍺 BUDWEISER (0.0%)</text>
+</svg>
